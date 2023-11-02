@@ -20,11 +20,11 @@ Created By:
 [Chuanzhao Huang](https://chuanzhaohuang.github.io/)
 Release: [Homepage](https:// /)  
 
-### Project Objective
+## Project Objective
 
 Our platform stands out by integrating user feedback in the form of comments and by allowing users to subscribe for regular fruit deliveries, ensuring they never run out of their favorites. Each product detail page is meticulously designed to provide comprehensive information about the fruit, along with promoting related fruit products, thus giving users an enhanced shopping experience.
 
-### Features
+## Features
 
 1) Customers: User Authentication
 Customers can register for a personal account to track their orders, manage their subscriptions, and maintain a profile. This secure system ensures users' data is safeguarded and enhances the personalized shopping experience.
@@ -42,7 +42,7 @@ After making a purchase, users are encouraged to leave comments on the product. 
 5) Admin Dashboard
 A comprehensive dashboard for shop owners and administrators. This tool helps in managing inventory, tracking sales, monitoring user feedback, and ensuring smooth operations. It's an essential feature that provides a real-time overview of the business and aids in strategic decision-making.
 
-### Installation
+## Installation
 
 Clone the repository and then do:
 
@@ -68,7 +68,7 @@ npm run build
 
 on the font folder. You can also start a secondary development server for the front end using `npm run dev` on the [./front](./front)  folder courtesy of vite, which will serve the front via <http://localhost:5173>
 
-### Preview
+## Preview
 
 [Thumbnail Page]
 < >
@@ -91,7 +91,7 @@ on the font folder. You can also start a secondary development server for the fr
 [Product Detail Page]
 < >
 
-### Demonstration
+## Demonstration
 
 [Mockup](https://www.figma.com/file/1fF493BQYAyzJn8wudSi0d/FruitHub-Design?type=whiteboard&node-id=0%3A1&t=HLYiwqAJ2ZpFWfwp-1/)
 
@@ -99,6 +99,6 @@ on the font folder. You can also start a secondary development server for the fr
 
 [Slides]( /)
 
-### Copyright
+## Copyright
 
 This webpage takes advantage of templates from bootstrap. This project is under MIT license. All modified image resources could be distributed with same methods. Photos of myself will be shared with CC 4.0 BY-NC-ND license.
