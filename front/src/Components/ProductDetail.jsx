@@ -1,6 +1,6 @@
 import {useParams, Link} from "react-router-dom"
-import Title from "./Title"
-import QuantityBtn from "./QuantityBtn"
+import Title from "../Layouts/Title"
+import QuantityBtn from "../Components/QuantityBtn"
 import { useState,useEffect } from "react"
 
 export default function ProductDetail() {

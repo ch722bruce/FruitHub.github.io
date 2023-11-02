@@ -1,6 +1,6 @@
-import Title from "./Title"
+import Title from "../Layouts/Title"
 import {Link} from 'react-router-dom'
-import QuantityBtn from "./QuantityBtn"
+import QuantityBtn from "../Components/QuantityBtn"
 import { CartContext } from "../Layouts/CartContext"
 import { useContext } from "react"
 

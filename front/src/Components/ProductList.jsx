@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 import React, {useState, useEffect} from "react"  
-import Title from "./Title"
-import QuantityBtn from "./QuantityBtn"
+import Title from "../Layouts/Title"
+import QuantityBtn from "../Components/QuantityBtn"
 
 export default function ProductList() {
 
