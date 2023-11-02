@@ -8,8 +8,10 @@ FruitHub emerges as a modern marketplace dedicated solely to fresh fruits. By of
 
 #### [FruitHub](https:// /)
 
-Based on JavaScript, CSS, HTML, and Bootstrap v5.3.2, Express Node, Node JS, MongoDB@7, React.
+Based on JavaScript, CSS, HTML, and Bootstrap v5.3.2, Express Node, Node JS, MongoDB@7, React, Vite.
+
 CS 5610 Web Development:  [Class Link](https://johnguerra.co/classes/webDevelopment_fall_2023/)
+
 Northeastern University San Jose
 Instructor: John Alexis Guerra Gómez
 
@@ -19,6 +21,7 @@ Created By:
 [Zhehao Xu](https://zhehao9758.github.io/Zhehao-portfolio/)  &
 [Chuanzhao Huang](https://chuanzhaohuang.github.io/)
 Release: [Homepage](https:// /)  
+
 
 ## Project Objective
 
@@ -41,6 +44,7 @@ After making a purchase, users are encouraged to leave comments on the product. 
 
 5) Admin Dashboard
 A comprehensive dashboard for shop owners and administrators. This tool helps in managing inventory, tracking sales, monitoring user feedback, and ensuring smooth operations. It's an essential feature that provides a real-time overview of the business and aids in strategic decision-making.
+
 
 ## Installation
 
@@ -66,7 +70,7 @@ npm install
 npm run build
 ```
 
-on the font folder. You can also start a secondary development server for the front end using `npm run dev` on the [./front](./front)  folder courtesy of vite, which will serve the front via <http://localhost:5173>
+On the font folder. You can also start a secondary development server for the front end using `npm run dev` on the [./front](./front)  folder courtesy of vite, which will serve the front via <http://localhost:5173>
 
 ## Preview
 
