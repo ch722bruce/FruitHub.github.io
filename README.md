@@ -22,7 +22,6 @@ Created By:
 [Chuanzhao Huang](https://chuanzhaohuang.github.io/)
 Release: [Homepage](https:// /)  
 
-
 ## Project Objective
 
 Our platform stands out by integrating user feedback in the form of comments and by allowing users to subscribe for regular fruit deliveries, ensuring they never run out of their favorites. Each product detail page is meticulously designed to provide comprehensive information about the fruit, along with promoting related fruit products, thus giving users an enhanced shopping experience.
@@ -45,12 +44,11 @@ After making a purchase, users are encouraged to leave comments on the product. 
 5) Admin Dashboard
 A comprehensive dashboard for shop owners and administrators. This tool helps in managing inventory, tracking sales, monitoring user feedback, and ensuring smooth operations. It's an essential feature that provides a real-time overview of the business and aids in strategic decision-making.
 
-
 ## Installation
 
 Clone the repository and then do:
 
-```
+```bash
 npm install
 npm start
 ```
@@ -65,7 +63,7 @@ This application assumes that you have a Mongo server running on localhost:27017
 
 The express application will serve the compiled react application hosted on [./front](./front) folder. If you want to recompile it just run
 
-```
+```bash
 npm install
 npm run build
 ```

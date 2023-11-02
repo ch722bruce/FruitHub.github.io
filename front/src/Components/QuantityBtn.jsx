@@ -1,5 +1,7 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../Layouts/CartContext"
+import PropTypes from 'prop-types';
+
 
 export default function QuantityBtn({productInfo}) {
 
@@ -72,3 +74,13 @@ export default function QuantityBtn({productInfo}) {
         </div>
     )
 }
+
+QuantityBtn.propTypes = {
+    productInfo: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        description: PropTypes.string.isRequired
+    }).isRequired
+};
