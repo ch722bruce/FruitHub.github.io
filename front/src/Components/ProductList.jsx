@@ -9,7 +9,7 @@ export default function ProductList() {
 
     useEffect(()=>{
 
-        fetch('https://')
+        fetch('https://hoyinleung.github.io/demoapi/react-basic-product.json')
             .then(response => response.json())
             .then(data => setProductList(data))
 
