@@ -40,8 +40,6 @@ A comprehensive dashboard for shop owners and administrators. This tool helps in
 
 
 ### Installation
-
-
 Clone the repository and then do:
 
 ```
@@ -51,12 +49,11 @@ npm start
 Which will start the backend server, running on http://localhost:3000. 
 
 
-## Database
+### Database
 
 This application assumes that you have a Mongo server running on localhost:27017, or configured in the `MONGOMONGODB_URI` environment variable. For initializing the database you can run the command `npm run initDB` which will run `mongoimport` on the [./db/initialPhotoSharingData.json](./db/initialPhotoSharingData.json) data, and will create a `photoSharing` database with a `photos` collection
 
-
-## Frontend
+### Frontend
 
 The express application will serve the compiled react application hosted on [./front](./front) folder. If you want to recompile it just run 
 
@@ -64,8 +61,6 @@ The express application will serve the compiled react application hosted on [./f
 npm run build``` 
 
 on the font folder. You can also start a secondary development server for the front end using `npm run dev` on the [./front](./front)  folder courtesy of vite, which will serve the front via http://localhost:5173
-
-
 
 
 ### Preview:
