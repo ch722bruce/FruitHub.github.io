@@ -1,9 +1,9 @@
 {
-  "name": "miniphotosharing",
+  "name": "FruitHub",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "author": "John Alexis Guerra Gomez",
+  "author": "Chuanzhao Huang & Zhehao Xu",
   "license": "MIT",
   "scripts": {
     "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",

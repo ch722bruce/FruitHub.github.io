@@ -59,8 +59,6 @@ This application assumes that you have a Mongo server running on localhost:27017
 
 ### Frontend
 
->>>>>>> f502ef2 (setup vite react framework)
-
 The express application will serve the compiled react application hosted on [./front](./front) folder. If you want to recompile it just run
 
 ```

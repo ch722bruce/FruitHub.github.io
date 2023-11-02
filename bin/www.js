@@ -9,7 +9,7 @@ import debugModule from "debug";
 
 import http from "http";
 
-const debug = debugModule("miniphotosharing:server");
+const debug = debugModule("FruitHub:server");
 /**
  * Get port from environment and store in Express.
  */
