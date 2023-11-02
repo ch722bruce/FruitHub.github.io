@@ -1,4 +1,5 @@
-import {useParams, Link} from "react-router-dom"
+import {useParams} from "react-router-dom"
+import {Link} from "react-router-dom"
 import Title from "../Layouts/Title"
 import QuantityBtn from "../Components/QuantityBtn"
 import { useState,useEffect } from "react"
