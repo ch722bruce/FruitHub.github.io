@@ -33,7 +33,7 @@ export default function ProductDetail() {
                             <td align="right">
                                 <img src={process.env.PUBLIC_URL+'/img/'+productDetail.image} alt={productDetail.name} width="400" />
                             </td>
-                            <td width="45%" padding="10">
+                            <td width="45%" style={{padding: '10px'}}>
                                 <p>Name : {productDetail.name}</p>
                                 <p>Price : ${productDetail.price}</p>
                                 <p>Description : {productDetail.description}</p><br/>
