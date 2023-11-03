@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <CartContext.Provider value={{ cartItems, setCartItems }}>
         <nav>
-          <Link to="/">FruitHub</Link>
+          <Link to="/">Main</Link>
           <Link to="/checkout">Carts</Link>
         </nav>
 
