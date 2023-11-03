@@ -1,7 +1,7 @@
-import Title from "../Layouts/Title";
+import Title from "./Title";
 import { Link } from "react-router-dom";
-import QuantityBtn from "../Components/QuantityBtn";
-import { CartContext } from "../Layouts/CartContext";
+import QuantityBtn from "./QuantityBtn";
+import { CartContext } from "./CartContext";
 import { useContext } from "react";
 
 export default function Checkout() {

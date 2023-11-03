@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Checkout from "./Components/CheckOut";
 import ProductDetail from "./Components/ProductDetail";
 import ProductList from "./Components/ProductList";
-import { CartContext } from "./Layouts/CartContext";
+import { CartContext } from "./Components/CartContext";
 import { useState } from "react";
 
 function App() {

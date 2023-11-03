@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { CartContext } from "../Layouts/CartContext";
+import { CartContext } from "./CartContext";
 import PropTypes from "prop-types";
 
 export default function QuantityBtn({ productInfo }) {
