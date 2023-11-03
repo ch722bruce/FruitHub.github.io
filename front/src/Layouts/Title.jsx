@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export default function Title({ mainTitle }) {
-    return <h1>{mainTitle}</h1>;
+  return <h1>{mainTitle}</h1>;
 }
 
 Title.propTypes = {
-    mainTitle: PropTypes.string.isRequired,
+  mainTitle: PropTypes.string.isRequired,
 };

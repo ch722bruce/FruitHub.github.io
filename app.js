@@ -6,7 +6,6 @@ import { fileURLToPath } from "url";
 
 import indexRouter from "./routes/index.js";
 
-
 // ES6 modules don't have __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
