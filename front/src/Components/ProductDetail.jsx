@@ -43,6 +43,7 @@ export default function ProductDetail() {
                   <p>Description: {productDetail.description}</p>
                   <br />
                   <QuantityBtn productInfo={productDetail} />
+                {/* add Subscribe Btn */}
                 </td>
               </tr>
             </tbody>
