@@ -50,6 +50,7 @@ Clone the repository and then do:
 
 ```bash
 npm install
+npm install react-router-dom@6
 npm start
 ```
 
@@ -69,6 +70,10 @@ npm run build
 ```
 
 On the font folder. You can also start a secondary development server for the front end using `npm run dev` on the [./front](./front)  folder courtesy of vite, which will serve the front via <http://localhost:5173>
+
+```bash
+npm run dev
+```
 
 ## Preview
 
