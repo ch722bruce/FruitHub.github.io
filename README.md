@@ -50,7 +50,6 @@ Clone the repository and then do:
 
 ```bash
 npm install
-npm install react-router-dom@6
 npm start
 ```
 
@@ -66,6 +65,7 @@ The express application will serve the compiled react application hosted on [./f
 
 ```bash
 npm install
+npm install react-router-dom@6
 npm run build
 ```
 
