@@ -22,6 +22,15 @@ function MyMongoDB() {
     }
   };
 
+  myDB.getFruitById = async function(query={}){
+    const { client, db } = connect();
+    try {
+      return await db.collection("fruits").findOne(query);
+    } finally {
+      await client.close();
+    }
+  }
+
   return myDB;
 }
 

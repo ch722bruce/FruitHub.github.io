@@ -8,13 +8,11 @@ export default function ProductDetail() {
   let [productDetail, setProductDetail] = useState(null);
 
   useEffect(() => {
-    fetch("https://hoyinleung.github.io/demoapi/react-basic-product.json")
+    fetch(`/api/fruits/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        let productInfo = data.find((element) => {
-          return element.id === parseInt(params.id);
-        });
-        setProductDetail(productInfo);
+        console.log(data);
+        setProductDetail(data);
       });
   }, [params.id]);
 
@@ -32,14 +30,14 @@ export default function ProductDetail() {
               <tr>
                 <td align="right">
                   <img
-                    src={`${publicUrl}/img/${productDetail.image}`}
+                    src={productDetail.image_url}
                     alt={productDetail.name}
                     width="400"
                   />
                 </td>
                 <td width="45%" style={{ padding: "10px" }}>
                   <p>Name: {productDetail.name}</p>
-                  <p>Price: ${productDetail.price}</p>
+                  <p>Price: {productDetail.price}</p>
                   <p>Description: {productDetail.description}</p>
                   <br />
                   <QuantityBtn productInfo={productDetail} />
