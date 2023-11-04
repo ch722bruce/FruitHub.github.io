@@ -1,4 +1,6 @@
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config();
 
 function MyMongoDB() {
   const myDB = {};
@@ -6,7 +8,7 @@ function MyMongoDB() {
 
   function connect() {
     const client = new MongoClient(uri);
-    const db = client.db("photoSharing");
+    const db = client.db("fruitHub");
     return { client, db };
   }
 
