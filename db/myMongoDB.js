@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import {MongoClient} from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -12,17 +12,16 @@ function MyMongoDB() {
     return { client, db };
   }
 
-  myDB.getPhotos = async function (query = {}) {
+  myDB.getFruits = async function (query={}, limit = 50){
     const { client, db } = connect();
 
     try {
-      const photos = await db.collection("photos").find(query).toArray();
-
-      return photos;
+      return (await db.collection("fruits").find(query).toArray()).slice(0, limit);
     } finally {
       await client.close();
     }
   };
+
   return myDB;
 }
 

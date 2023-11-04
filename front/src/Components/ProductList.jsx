@@ -7,7 +7,7 @@ export default function ProductList() {
   let [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    fetch("https://hoyinleung.github.io/demoapi/react-basic-product.json")
+    fetch("/api/fruits")
       .then((response) => response.json())
       .then((data) => setProductList(data));
   }, []);
@@ -19,19 +19,20 @@ export default function ProductList() {
 
       <div className="container">
         {productList.map((product) => (
-          <React.Fragment key={product.id}>
+          <React.Fragment key={product._id}>
             <div className="containerItem">
-              <Link to={"/product/" + product.id}>
+              <Link to={"/product/" + product._id}>
                 <img
+                  className="fruitImg"
                   src={
-                    import.meta.env.VITE_PUBLIC_URL + "/img/" + product.image
+                    product.image_url
                   }
                   alt={product.name}
                 />
               </Link>
 
               <div className="productName">
-                {product.name} - ${product.price}
+                {product.name} - {product.price}
               </div>
 
               <QuantityBtn productInfo={product} />

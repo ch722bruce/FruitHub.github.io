@@ -99,7 +99,8 @@ body{
   .productName{
     margin-top:15px;
     font-weight: bold;
-    font-size: 24px
+    font-size: 24px;
+    height: 72px
   }
   .ProductDetail{
     margin: 10px auto;
@@ -195,4 +196,8 @@ body{
   }
   nav a:visited{
     color: black;
+  }
+  .fruitImg{
+    height: 230px;
+    width: 280px;
   }
