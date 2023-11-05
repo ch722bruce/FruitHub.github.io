@@ -6,11 +6,11 @@ import { useContext } from "react";
 
 export default function Checkout() {
   let { cartItems } = useContext(CartContext);
-  let cartEmpty = cartItems.length <= 0 ? true : false;
+  let cartEmpty = cartItems.length <= 0;
 
   let grandTotal = cartItems.reduce((total, product) => {
-    return (total += product.price * product.quantity);
-  }, 0);
+    return (total + product.price.slice(1) * product.quantity);
+  }, 0).toFixed(2);
   const freeShippingPrice = 99;
 
   return (
@@ -35,22 +35,18 @@ export default function Checkout() {
             <table className="checkoutTable">
               <tbody>
                 {cartItems.map((product) => (
-                  <tr key={product.id}>
+                  <tr key={product._id}>
                     <td>
-                      <Link to={"/product/" + product.id}>
+                      <Link to={"/product/" + product._id}>
                         <img
-                          src={
-                            import.meta.env.VITE_PUBLIC_URL +
-                            "/img/" +
-                            product.image
-                          }
+                          src={product.image_url}
                           alt={product.name}
                         />
                       </Link>
                     </td>
                     <td>
                       <p>Name : {product.name}</p>
-                      <p>Price : ${product.price}</p>
+                      <p>Price : {product.price}</p>
                       <p>Description : {product.description}</p>
                     </td>
                     <td width="200">
@@ -58,7 +54,7 @@ export default function Checkout() {
                     </td>
                     <td>
                       <div className="productSubTotal">
-                        ${product.price * product.quantity}
+                        ${(product.price.slice(1) * product.quantity).toFixed(2)}
                       </div>
                     </td>
                   </tr>
@@ -73,9 +69,9 @@ export default function Checkout() {
               <div className="freeShipping">✔️Free Delivery</div>
             ) : (
               <div className="noShipping">
-                Over${freeShippingPrice}Get Free Shipping
+                Over ${freeShippingPrice} Get Free Shipping
                 <br />
-                Still Need${freeShippingPrice - grandTotal}
+                Still Need ${(freeShippingPrice - grandTotal).toFixed(2)}
               </div>
             )}
 

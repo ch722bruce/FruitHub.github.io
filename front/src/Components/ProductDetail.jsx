@@ -16,8 +16,6 @@ export default function ProductDetail() {
       });
   }, [params.id]);
 
-  // Use Vite's environment variable (remember to restart Vite after adding it to your .env file)
-  const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
 
   return (
     <div>

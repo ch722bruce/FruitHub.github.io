@@ -44,7 +44,7 @@ body{
   .addToCart {
     display: block;
     width: 80%;
-    margin: 25px auto;
+    margin: 30px auto 15px;
     font-size: 20px;
     font-weight: bold;
     -webkit-user-select: none;
@@ -100,7 +100,7 @@ body{
     margin-top:15px;
     font-weight: bold;
     font-size: 24px;
-    height: 72px
+    height: 100px;
   }
   .ProductDetail{
     margin: 10px auto;
@@ -125,6 +125,7 @@ body{
   .checkoutTable tr{
     background-color: antiquewhite;
     margin: 10px 10px;
+    border-bottom-width: 2px;
   }
   .checkoutTable td{
     padding:0px;
@@ -138,6 +139,7 @@ body{
     font-size: 30px;
     font-weight: bold;
     margin-right: 30px;
+    width: 120px;
   }
   .checkoutSection{
     width: 30%;

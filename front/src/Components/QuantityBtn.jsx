@@ -6,7 +6,7 @@ export default function QuantityBtn({ productInfo }) {
   const { cartItems, setCartItems } = useContext(CartContext);
 
   let productIndexInCart = cartItems.findIndex((element) => {
-    return element.id === productInfo.id;
+    return element._id === productInfo._id;
   });
 
   let [numInCart, setNumInCart] = useState(
@@ -17,9 +17,9 @@ export default function QuantityBtn({ productInfo }) {
     if (productIndexInCart === -1) {
       setCartItems([
         {
-          id: productInfo.id,
+          _id: productInfo._id,
           name: productInfo.name,
-          image: productInfo.image,
+          image_url: productInfo.image_url,
           price: productInfo.price,
           description: productInfo.description,
           quantity: 1,
@@ -72,10 +72,10 @@ export default function QuantityBtn({ productInfo }) {
 
 QuantityBtn.propTypes = {
   productInfo: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
 };
