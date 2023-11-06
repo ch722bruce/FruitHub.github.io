@@ -1,0 +1,28 @@
+.home {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .greeting {
+    margin-top: 250px;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+  
+  .welcome {
+    /* color: rgb(255, 255, 255); */
+    font-size: 54px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    border: 0;
+    background: none;
+    margin-right: 30px;
+  }
+  
+  button:hover {
+    color: rgb(127, 127, 127);
+    border-bottom: 1px solid;
+  }

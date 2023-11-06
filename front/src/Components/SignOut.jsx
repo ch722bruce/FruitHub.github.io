@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/LogoutIcon.css";
+import "../css/signOut.css";
 import PropTypes from "prop-types";
 
 function LogoutIcon({ userLogout }) {

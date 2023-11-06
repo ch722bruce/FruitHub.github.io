@@ -1,7 +1,7 @@
 const API = {
     login: async (input) => {
       try {
-        const res = await fetch("/login", {
+        const res = await fetch("/signIn", {
           method: "post",
           body: JSON.stringify(input),
           headers: {
@@ -17,19 +17,37 @@ const API = {
   
     register: async (input) => {
       try {
-        const res = await fetch("/register", {
+        const res = await fetch("/signUp", {
           method: "post",
           body: JSON.stringify(input),
           headers: {
             "Content-Type": "application/json",
           },
         });
+    
+        // Check if the response was successful
+        if (!res.ok) {
+          // You can create a new error object and return or throw it
+          const err = new Error(`HTTP error! status: ${res.status}`);
+          err.response = res;
+          throw err;
+        }
+    
         const registerRes = await res.json();
         return registerRes;
+    
       } catch (e) {
-        console.log(e);
+        // Return an error object with the message and any other details
+        console.error(e);
+        // If the response is available and has a status, we include it in the error
+        if (e.response && e.response.status === 404) {
+          return { error: true, message: "Endpoint not found." };
+        } else {
+          return { error: true, message: e.message || "An error occurred during registration." };
+        }
       }
     },
+    
   
     updateProfile: async (input) => {
       try {
@@ -51,7 +69,7 @@ const API = {
   
     logout: async () => {
       try {
-        const res = await fetch("/logout", {
+        const res = await fetch("/signOut", {
           method: "get",
         });
         console.log("User logout");
@@ -92,21 +110,7 @@ const API = {
       }
     },
   
-    getCourses: async () => {
-      try {
-        const res = await fetch("/getCourses", {
-          method: "get",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const data = await res.json();
-        // console.log(data);
-        return data;
-      } catch (e) {
-        console.log(e);
-      }
-    },
+    
   };
   
   export default API;

@@ -1,5 +1,5 @@
-const MongoClient = require("mongodb").MongoClient;
-const dotenv = require("dotenv");
+import {MongoClient} from "mongodb";
+import dotenv from "dotenv";
 dotenv.config();
 
 function MyAuthMongoDB() {
@@ -7,7 +7,7 @@ function MyAuthMongoDB() {
   const mongourl = process.env.MONGO_URL;
 
   myDB.findUser = async function (user) {
-    const DB_NAME = "project3";
+    const DB_NAME = "fruitHub";
     const COL_NAME = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
     const usersColl = client.db(DB_NAME).collection(COL_NAME);
@@ -26,7 +26,7 @@ function MyAuthMongoDB() {
   };
 
   myDB.register = async function (user) {
-    const DB_NAME = "project3";
+    const DB_NAME = "fruitHub";
     const COL_NAME = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
     const usersColl = client.db(DB_NAME).collection(COL_NAME);
@@ -46,7 +46,7 @@ function MyAuthMongoDB() {
   };
 
   myDB.updateUserInfo = async function (userNewInfo) {
-    const DB_NAME = "project3";
+    const DB_NAME = "fruitHub";
     const COL_NAME = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
     const usersColl = client.db(DB_NAME).collection(COL_NAME);
@@ -75,7 +75,7 @@ function MyAuthMongoDB() {
   };
 
   myDB.deleteUser = async function (user) {
-    const DB_NAME = "project3";
+    const DB_NAME = "fruitHub";
     const COL_NAME = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
     const usersColl = client.db(DB_NAME).collection(COL_NAME);
@@ -93,15 +93,45 @@ function MyAuthMongoDB() {
     }
   };
 
-  myDB.getCourses = async function (query = {}) {
+  myDB.getUserOrder = async function (useremail) {
     const DB_NAME = "project3";
-    const COL_NAME = "courses";
+    const DB_COLLECTION = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
-    const coursesColl = client.db(DB_NAME).collection(COL_NAME);
+
     try {
-      return await coursesColl.find(query).toArray();
+      const data = client.db(DB_NAME).collection(DB_COLLECTION);
+      const user = await data.findOne({ email: useremail });
+      console.log(user);
+      client.close();
+
+      const currentUserPlan = user.productOrders;
+      return currentUserPlan;
     } catch (e) {
       console.log(e);
+    }
+  };
+
+  myDB.createOrder = async function (order, useremail) {
+    const DB_NAME = "project3";
+    const DB_COLLECTION = "users";
+    const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
+    let count = 0;
+
+    try {
+      order.courses.forEach((order) => {
+        if (order.code === "none") {
+          count = count + 1;
+        }
+      });
+      if (count > 0) {
+        return false;
+      }
+      const userCol = client.db(DB_NAME).collection(DB_COLLECTION);
+      await userCol.updateOne({ email: useremail }, { $push: { order: order } });
+      return true;
+    } catch (e) {
+      console.log(e);
+      return false;
     }
   };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import API from "../API/API";
 import { Link , Routes, Route } from "react-router-dom";
-// import "../css/Navbar.css";
+import "../css/Navbar.css";
 import PropTypes from "prop-types";
 import Checkout from "./CheckOut";
 
@@ -31,8 +31,8 @@ function Navbar({ isLogin }) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/checkout" className="nav-link">
-              Carts
+            <Link to="/checkout" className="brand nav-link">
+              Carts {" "}
             </Link>
           </li>
         </ul>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import API from "../API/API";
-// import "../css/RegisterPage.css";
+import "../css/signUp.css";
 import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
@@ -17,18 +17,25 @@ function RegisterPage() {
   const onFormSubmit = async (event) => {
     console.log("Form Submit");
     event.preventDefault();
-    const res = await API.register(input);
-    if (res.success) {
-      navigate("/login");
-    } else {
-      setMsg(res.msg);
+    try {
+      const res = await API.register(input);
+      if (res && res.success) {
+        navigate("/signIn");
+      } else {
+        setMsg(res ? res.msg : "An unknown error occurred");
+      }
+    } catch (error) {
+      // Catch any errors that occur during the API call
+      console.error("Error during registration:", error);
+      setMsg(error.message || "An error occurred during sign up.");
     }
   };
+  
 
   return (
     <div>
       <div className="registerPanel">
-        <h1 className="registerTitle">Sign up</h1>
+        <h1 className="registerTitle">Sign Up</h1>
 
         <form onSubmit={onFormSubmit} className="registerForm">
           <div className="form-div">
@@ -43,7 +50,7 @@ function RegisterPage() {
               placeholder=" "
               aria-label="email"
             />
-            <label className="registerform-label">Email address</label>
+            <label className="registerform-label">Email Address</label>
           </div>
 
           <div className="form-div">
@@ -89,7 +96,7 @@ function RegisterPage() {
             >
               <option value=""> </option>
               <option value="general"> Customers </option>
-              <option value="admin">Admin</option>
+              <option value="admin">Admins</option>
             </select>
             <label className="registerform-label">You are</label>
           </div>
@@ -111,7 +118,7 @@ function RegisterPage() {
 
           <div className="registermsg">{registermsg}</div>
 
-          <button className="registerBtn">Signup</button>
+          <button className="registerBtn">Sign Up</button>
         </form>
       </div>
     </div>

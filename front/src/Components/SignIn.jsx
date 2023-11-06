@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import API from "../API/API";
-// import "../css/Login.css";
+import "../css/signIn.css";
 import { useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -23,8 +23,8 @@ function SignIn({ isLogin, setisLogin }) {
       console.log("logged in");
       sessionStorage.setItem("user", res.user.email);
       setisLogin(true);
-      // navigate("/dashboard", {state: {user: res.user}});
-      navigate("/dashboard");
+      // navigate("/productList", {state: {user: res.user}});
+      navigate("/productList");
     } else {
       setMsg(res.msg);
     }
@@ -73,8 +73,8 @@ function SignIn({ isLogin, setisLogin }) {
             <button className="loginBtn">Login In</button>
             <div>
               Do not have an account yet?
-              <Link to="/signup" className="signup-link">
-                Sign up
+              <Link to="/signUp" className="signup-link">
+                Sign Up
               </Link>
             </div>
           </form>
