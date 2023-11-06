@@ -7,14 +7,16 @@ import SubscribeBtn from "./SubscribeBtn";
 export default function ProductDetail() {
   let params = useParams();
   let [productDetail, setProductDetail] = useState(null);
-  let [rendered, setRendered] = useState(false);
+
   useEffect(() => {
     fetch(`/api/fruits/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        setProductDetail(data);
-      }).finally(()=>setRendered(true));
-  }, [params.id]);
+        if(!data) setProductDetail("")
+        else setProductDetail(data);
+      }).catch(()=>setProductDetail(""));
+
+  }, []);
 
 
   return (
@@ -46,12 +48,12 @@ export default function ProductDetail() {
           </table>
         </div>
       )}
-      {rendered&&!productDetail && (
+      {productDetail==="" && (
         <div className="ProductDetail">
           <Title mainTitle={"Product Not Found"} />
         </div>
       )}
-      {rendered&&<Link to="/">
+      {productDetail!==null && <Link to="/">
         <div className="backToGoodsListBtn">↩️ Go Back</div>
       </Link>}
     </div>

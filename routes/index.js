@@ -23,9 +23,9 @@ router.put("/api/users/subscriptions", async function (req, res) {
   const { fruitId, userId, freq } = req.body;
   try {
     const result = await myDB.subscribe({
-      userId: new ObjectId(userId),
+      userId: userId,
       freq: freq,
-      fruitId: new ObjectId(fruitId)
+      fruitId: fruitId
     });
     res.json(result);
   } catch (e) {
@@ -33,10 +33,11 @@ router.put("/api/users/subscriptions", async function (req, res) {
   }
 });
 router.get("/api/users/subscriptions", async function (req, res) {
-  const { fruitId, userId } = req.params;
+  const { userId, fruitId } = req.query;
   try {
-    const fruitSubscription = await myDB.getSubscription({ userId: new ObjectId(userId), fruitId: new ObjectId(fruitId) });
+    const fruitSubscription = await myDB.getSubscription({ userId: userId, fruitId: fruitId });
     res.json(fruitSubscription);
+    //console.log(fruitSubscription);
   } catch (e) {
     res.sendStatus(500);
   }
@@ -44,8 +45,9 @@ router.get("/api/users/subscriptions", async function (req, res) {
 router.delete("/api/users/subscriptions", async function (req, res) {
   const { fruitId, userId } = req.body;
   try {
-    const result = await myDB.unsubscribe({ userId: new ObjectId(userId), fruitId: new ObjectId(fruitId) });
+    const result = await myDB.unsubscribe({ userId: userId, fruitId: fruitId });
     res.json(result);
+    console.log(result);
   } catch (e) {
     res.sendStatus(500);
   }

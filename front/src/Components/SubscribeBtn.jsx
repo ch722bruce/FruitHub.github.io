@@ -1,63 +1,73 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 export default function SubscribeBtn({ productInfo }) {
-  let [subscriptionInfo, setSubscriptionInfo] = useState(null);
+  const [subscriptionInfo, setSubscriptionInfo] = useState(false);
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const freq = useRef("Daily");
   const apiUrl = "/api/users/subscriptions";
-  const urlWithParams = new URL(apiUrl);
-
-  urlWithParams.searchParams.append("userId", null);
-  urlWithParams.searchParams.append("productId", productInfo._id);
 
   useEffect(() => {
-    fetch(urlWithParams)
+    fetch(apiUrl +"?"+
+        new URLSearchParams({
+          userId: sessionStorage.getItem("userId"),
+          fruitId: productInfo._id,
+        }))
       .then((response) => response.json())
-      .then((data) => setSubscriptionInfo(data));
-  });
+      .then((data) => {
+        console.log(data);
+        if (data) setSubscriptionInfo(true);
+      });
+  }, []);
 
-  const handleSubscribe = (freq) => {
+  const handleSubscribe = () => {
     fetch(apiUrl, {
       method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
-        freq: freq,
-        userId: null,
-        productId: productInfo._id,
+        freq: freq.current,
+        userId: sessionStorage.getItem("userId"),
+        fruitId: productInfo._id,
       }),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
-        }
-        return response.json(); // 将响应解析为JSON
-      })
-      .then((data) => {
-        setSubscriptionInfo(data);
+        } else setSubscriptionInfo(true);
       })
       .catch((error) => {
         console.error(
           "There has been a problem with your fetch operation:",
           error,
         );
-      });
+      })
+      .finally(() => cancelSubscribe());
+  };
+  const cancelSubscribe = () => {
+    setIsSubscribing(false);
+  };
+
+  const startSubscribe = () => {
+    setIsSubscribing(true);
   };
 
   const handleUnsubscribe = () => {
     fetch(apiUrl, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
-        userId: null,
-        productId: productInfo._id,
+        userId: sessionStorage.getItem("userId"),
+        fruitId: productInfo._id,
       }),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
-        }
-        return response.json(); // 将响应解析为JSON
-      })
-      .then((data) => {
-        setSubscriptionInfo(data);
+        } else setSubscriptionInfo(false);
       })
       .catch((error) => {
         console.error(
@@ -66,19 +76,36 @@ export default function SubscribeBtn({ productInfo }) {
         );
       });
   };
-
+  const frequencies = ["Daily", "Weekly", "Monthly"];
   return (
     <div>
-      {subscriptionInfo && (
-        <div className="addToCart">
-          <span className="addToCartBtn" onClick={handleUnsubscribe}>
-            Unsubscribe
+      {isSubscribing === true && (
+        <div className="modal-content">
+          <select
+            value={freq.current}
+            onChange={(e) => freq.current = e.target.value}
+          >
+            {frequencies.map((frequency, index) => (
+              <option key={index} value={frequency}>
+                {frequency}
+              </option>
+            ))}
+          </select>
+          <button onClick={handleSubscribe}>OK</button>
+          <button onClick={cancelSubscribe}>Cancel</button>
+        </div>
+      )}
+      {isSubscribing === false && subscriptionInfo && (
+        <div className="subscribe">
+          <span> ✅Subscribed</span>
+          <span className="unsubscribeBtn" onClick={handleUnsubscribe}>
+            Unsubscribed?
           </span>
         </div>
       )}
-      {!subscriptionInfo && (
-        <div className="addToCart">
-          <span className="addToCartBtn" onClick={handleSubscribe}>
+      {isSubscribing === false && !subscriptionInfo && (
+        <div className="subscribe">
+          <span className="subscribeBtn" onClick={startSubscribe}>
             Subscribe
           </span>
         </div>
