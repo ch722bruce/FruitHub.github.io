@@ -33,8 +33,6 @@ function MyMongoDB() {
       await client.close();
     }
   };
-<<<<<<< HEAD
-=======
 
   myDB.subscribe = async function (doc = {}) {
     const { client, db } = connect();
@@ -67,7 +65,6 @@ function MyMongoDB() {
       await client.close();
     }
   }
->>>>>>> refs/remotes/origin/main
 
   return myDB;
 }

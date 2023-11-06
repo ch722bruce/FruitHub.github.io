@@ -2,7 +2,7 @@ import {MongoClient} from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 
-function MyAuthMongoDB() {
+function MyMongoDB() {
   const myDB = {};
   const mongourl = process.env.MONGO_URL;
 
@@ -45,54 +45,7 @@ function MyAuthMongoDB() {
     }
   };
 
-  myDB.updateUserInfo = async function (userNewInfo) {
-    const DB_NAME = "fruitHub";
-    const COL_NAME = "users";
-    const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
-    const usersColl = client.db(DB_NAME).collection(COL_NAME);
-    try {
-      console.log("New info", userNewInfo);
-      const userInfo = await usersColl.findOne({ email: userNewInfo.email });
-      console.log("Find the user to be updated", userInfo);
-      if (userInfo) {
-        const res = await usersColl.updateOne(
-          { email: userNewInfo.email },
-          {
-            $set: {
-              fname: userNewInfo.fname,
-              lname: userNewInfo.lname,
-              program: userNewInfo.program,
-              password: userNewInfo.password,
-            },
-          }
-        );
-        console.log("Updating Result in DB", res);
-        return res;
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  myDB.deleteUser = async function (user) {
-    const DB_NAME = "fruitHub";
-    const COL_NAME = "users";
-    const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
-    const usersColl = client.db(DB_NAME).collection(COL_NAME);
-    try {
-      console.log("Try Deleting user..", user);
-      const userInfo = await usersColl.findOne({ email: user.email });
-      if (userInfo) {
-        console.log("Deleting user..", userInfo);
-        const res = await usersColl.deleteOne({ email: user.email });
-        console.log("Deleting Result in DB", res);
-        return res;
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
+  
   myDB.getUserOrder = async function (useremail) {
     const DB_NAME = "project3";
     const DB_COLLECTION = "users";
@@ -138,4 +91,6 @@ function MyAuthMongoDB() {
   return myDB;
 }
 
-module.exports = MyAuthMongoDB();
+const userDB = MyMongoDB();
+
+export default userDB;
