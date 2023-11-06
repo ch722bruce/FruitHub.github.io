@@ -1,19 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import Title from "./Title";
 import QuantityBtn from "./QuantityBtn";
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
+import SubscribeBtn from "./SubscribeBtn";
 
 export default function ProductDetail() {
   let params = useParams();
   let [productDetail, setProductDetail] = useState(null);
-
+  let [rendered, setRendered] = useState(false);
   useEffect(() => {
     fetch(`/api/fruits/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setProductDetail(data);
-      });
+      }).finally(()=>setRendered(true));
   }, [params.id]);
 
 
@@ -39,17 +39,21 @@ export default function ProductDetail() {
                   <p>Description: {productDetail.description}</p>
                   <br />
                   <QuantityBtn productInfo={productDetail} />
-                {/* add Subscribe Btn */}
+                  <SubscribeBtn productInfo={productDetail} />
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       )}
-
-      <Link to="/">
+      {rendered&&!productDetail && (
+        <div className="ProductDetail">
+          <Title mainTitle={"Product Not Found"} />
+        </div>
+      )}
+      {rendered&&<Link to="/">
         <div className="backToGoodsListBtn">↩️ Go Back</div>
-      </Link>
+      </Link>}
     </div>
   );
 }
