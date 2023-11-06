@@ -47,7 +47,7 @@ function MyMongoDB() {
 
   
   myDB.getUserOrder = async function (useremail) {
-    const DB_NAME = "project3";
+    const DB_NAME = "fruitHub";
     const DB_COLLECTION = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
 
@@ -65,7 +65,7 @@ function MyMongoDB() {
   };
 
   myDB.createOrder = async function (order, useremail) {
-    const DB_NAME = "project3";
+    const DB_NAME = "fruitHub";
     const DB_COLLECTION = "users";
     const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
     let count = 0;

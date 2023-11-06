@@ -10,7 +10,6 @@ import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import API from "./API/API";
 
-
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
@@ -29,43 +28,40 @@ function App() {
     <BrowserRouter>
       <CartContext.Provider value={{ cartItems, setCartItems }}>
         <nav>
-        <Navbar SignIn={SignIn} />
-          {/* <Link to="/">Main</Link>
-          <Link to="/checkout">Carts</Link> */}
+          <Navbar SignIn={SignIn} />
         </nav>
-        
 
         <Routes>
-        <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={<SignUp />} />
-            <Route
-              path="/signIn"
-              element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
-            />
-            <Route
-              path="/productList"
-              element={
-                isLogin ? (
-                  <ProductList isLogin={isLogin} userLogout={userLogout} />
-                ) : (
-                  <Home />
-                )
-              }
-            />
-            <Route
-              path="/checkout"
-              element={
-                isLogin ? (
-                  <Checkout
+          <Route path="/" element={<Home />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route
+            path="/signIn"
+            element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
+          />
+          <Route
+            path="/productList"
+            element={
+              isLogin ? (
+                <ProductList isLogin={isLogin} userLogout={userLogout} />
+              ) : (
+                <Home />
+              )
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              isLogin ? (
+                <Checkout
                   setisLogin={setisLogin}
                   isLogin={isLogin}
-                    userLogout={userLogout}
-                  />
-                ) : (
-                  <Home />
-                )
-              }
-            />
+                  userLogout={userLogout}
+                />
+              ) : (
+                <Home />
+              )
+            }
+          />
           {/* <Route path="/productList" element={<ProductList />} />
           <Route path="/checkout" element={<Checkout />} /> */}
           {/* <Route
@@ -75,7 +71,7 @@ function App() {
           <Route path="/product" element={<ProductDetail />}>
             <Route path=":id" element={<ProductDetail />} />
           </Route>
-          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/checkout" element={<Checkout />} />
 
           <Route path="*" element={<p>Page Not Found</p>} />
         </Routes>
