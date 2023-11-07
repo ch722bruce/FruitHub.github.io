@@ -38,7 +38,7 @@ function Navbar({ isLogin }) {
         </ul>
       </nav>
       <Routes>
-				<Route path="/checkout" element={<Checkout/>} />
+				<Route path="/checkout" element={user ? <Checkout/> : ""} />
     </Routes>   
     </div>
   );
