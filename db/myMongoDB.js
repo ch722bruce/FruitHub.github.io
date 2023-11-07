@@ -39,10 +39,12 @@ function MyMongoDB() {
     try {
       const filter = { userId: doc.userId, fruitId: doc.fruitId };
       const updateDocument = {
-        $set: { freq: doc.freq }
+        $set: { freq: doc.freq },
       };
       const options = { upsert: true };
-      return await db.collection("subscriptions").updateOne(filter, updateDocument, options);
+      return await db
+        .collection("subscriptions")
+        .updateOne(filter, updateDocument, options);
     } finally {
       await client.close();
     }
@@ -57,10 +59,28 @@ function MyMongoDB() {
     }
   };
 
-  myDB.getSubscription = async function(query={}){
+  myDB.getSubscription = async function (query = {}) {
     const { client, db } = connect();
     try {
       return await db.collection("subscriptions").findOne(query);
+    } finally {
+      await client.close();
+    }
+  };
+
+  myDB.comment = async function (doc = {}) {
+    const { client, db } = connect();
+    try {
+      return await db.collection("comments").insertOne(doc);
+    } finally {
+      await client.close();
+    }
+  };
+
+  myDB.getComments = async function (query = {}) {
+    const { client, db } = connect();
+    try {
+      return await db.collection("comments").find(query).toArray();
     } finally {
       await client.close();
     }
