@@ -64,7 +64,7 @@ function MyMongoDB() {
     } finally {
       await client.close();
     }
-  }
+  };
 
   return myDB;
 }
