@@ -21,14 +21,14 @@ function App() {
   const userLogout = async () => {
     sessionStorage.setItem("user", null);
     setisLogin(false);
-    await API.logout();
+    await API.signOut();
   };
 
   return (
     <BrowserRouter>
       <CartContext.Provider value={{ cartItems, setCartItems }}>
         <nav>
-          <Navbar SignIn={SignIn} />
+          <Navbar isLogin={isLogin} />
         </nav>
 
         <Routes>

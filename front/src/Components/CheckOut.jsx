@@ -2,9 +2,12 @@ import Title from "./Title";
 import { Link } from "react-router-dom";
 import QuantityBtn from "./QuantityBtn";
 import { CartContext } from "./CartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import API from "../API/API";
+import PropTypes from "prop-types";
 
-export default function Checkout() {
+export default function Checkout({ isLogin, userLogout }) {
+  let [user, setUser] = useState({});
   let { cartItems } = useContext(CartContext);
   let cartEmpty = cartItems.length <= 0;
 
@@ -13,9 +16,23 @@ export default function Checkout() {
   }, 0).toFixed(2);
   const freeShippingPrice = 99;
 
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const res = await API.getUser();
+        console.log("User get in Profile", res);
+        setUser(res.user);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getUserInfo();
+  }, []);
+
+
   return (
     <>
-      <Title mainTitle="Your Carts" />
+      <Title mainTitle="Your Carts"  isLogin={isLogin} user={user} userLogout={userLogout}/>
 
       {cartEmpty && (
         <div>
@@ -82,3 +99,8 @@ export default function Checkout() {
     </>
   );
 }
+
+Checkout.prototype = {
+  isLogin: PropTypes.bool,
+  userLogout: PropTypes.func,
+};

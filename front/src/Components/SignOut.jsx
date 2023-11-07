@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/signOut.css";
 import PropTypes from "prop-types";
 
-function LogoutIcon({ userLogout }) {
+function SignOut({userLogout}) {
   return (
     <div>
       <Link to="/" onClick={userLogout} className="nav-link">
@@ -13,8 +13,8 @@ function LogoutIcon({ userLogout }) {
   );
 }
 
-LogoutIcon.prototype = {
+SignOut.prototype = {
   userLogout: PropTypes.func,
 };
 
-export default LogoutIcon;
+export default SignOut;
