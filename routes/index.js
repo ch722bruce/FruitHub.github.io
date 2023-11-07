@@ -36,7 +36,6 @@ router.get("/api/users/subscriptions", async function (req, res) {
   try {
     const fruitSubscription = await myDB.getSubscription({ userId: userId, fruitId: fruitId });
     res.json(fruitSubscription);
-    //console.log(fruitSubscription);
   } catch (e) {
     res.sendStatus(500);
   }
@@ -46,7 +45,31 @@ router.delete("/api/users/subscriptions", async function (req, res) {
   try {
     const result = await myDB.unsubscribe({ userId: userId, fruitId: fruitId });
     res.json(result);
-    console.log(result);
+  } catch (e) {
+    res.sendStatus(500);
+  }
+});
+
+router.post("/api/comments", async function (req, res) {
+  const { userId, fruitId, text, username } = req.body;
+  try {
+    const result = await myDB.comment({
+      userId: userId,
+      fruitId: fruitId,
+      commentText: text,
+      username: username
+    });
+    res.json(result);
+  } catch (e) {
+    res.sendStatus(500);
+  }
+});
+
+router.get("/api/comments/:fruitId", async function (req, res) {
+  const { fruitId } = req.params;
+  try {
+    const comments = await myDB.getComments({ fruitId: fruitId });
+    res.json(comments);
   } catch (e) {
     res.sendStatus(500);
   }

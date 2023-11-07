@@ -3,6 +3,7 @@ import Title from "./Title";
 import QuantityBtn from "./QuantityBtn";
 import {useState, useEffect} from "react";
 import SubscribeBtn from "./SubscribeBtn";
+import CommentList from "./CommentList";
 
 export default function ProductDetail() {
   let params = useParams();
@@ -16,7 +17,7 @@ export default function ProductDetail() {
         else setProductDetail(data);
       }).catch(()=>setProductDetail(""));
 
-  }, []);
+  }, [params.id]);
 
 
   return (
@@ -46,6 +47,7 @@ export default function ProductDetail() {
               </tr>
             </tbody>
           </table>
+          <CommentList fruitId = {productDetail._id}/>
         </div>
       )}
       {productDetail==="" && (
@@ -53,7 +55,7 @@ export default function ProductDetail() {
           <Title mainTitle={"Product Not Found"} />
         </div>
       )}
-      {productDetail!==null && <Link to="/">
+      {productDetail!==null && <Link to="/productlist">
         <div className="backToGoodsListBtn">↩️ Go Back</div>
       </Link>}
     </div>

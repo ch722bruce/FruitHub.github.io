@@ -15,7 +15,6 @@ export default function SubscribeBtn({ productInfo }) {
         }))
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data) setSubscriptionInfo(true);
       });
   }, []);
