@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 export default function SubscribeBtn({ productInfo }) {
-  const [subscriptionInfo, setSubscriptionInfo] = useState(false);
+  const [subscriptionInfo, setSubscriptionInfo] = useState(null);
   const [isSubscribing, setIsSubscribing] = useState(false);
   const freq = useRef("Daily");
   const apiUrl = "/api/users/subscriptions";
@@ -75,7 +75,8 @@ export default function SubscribeBtn({ productInfo }) {
         );
       });
   };
-  const frequencies = ["Daily", "Weekly", "Monthly"];
+  const frequencies = ["Daily", "Weekly", "Every Two Weeks", "Monthly", "Every Three Months"];
+  if(!subscriptionInfo) return ;
   return (
     <div>
       {isSubscribing === true && (

@@ -8,59 +8,35 @@ import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import API from "./API/API";
+
+import SignOut from "./Components/SignOut.jsx";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const [isLogin, setisLogin] = useState(
-    sessionStorage.getItem("user") !== null &&
-      sessionStorage.getItem("user") !== "null"
-  );
 
-  const userLogout = async () => {
-    sessionStorage.setItem("user", null);
-    setisLogin(false);
-    await API.signOut();
-  };
+
 
   return (
     <BrowserRouter>
       <CartContext.Provider value={{ cartItems, setCartItems }}>
         <nav>
-          <Navbar isLogin={isLogin} />
+          <Navbar />
         </nav>
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route
             path="/signIn"
-            element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
+            element={<SignIn />}
           />
           <Route
             path="/productList"
-            element={
-              isLogin ? (
-                <ProductList isLogin={isLogin} userLogout={userLogout} />
-              ) : (
-                <Home />
-              )
-            }
+            element={<ProductList />}
           />
           <Route
             path="/checkout"
-            element={
-              isLogin ? (
-                <Checkout
-                  setisLogin={setisLogin}
-                  isLogin={isLogin}
-                  userLogout={userLogout}
-                />
-              ) : (
-                <Home />
-              )
-            }
+            element={<Checkout/>}
           />
           {/* <Route path="/productList" element={<ProductList />} />
           <Route path="/checkout" element={<Checkout />} /> */}
@@ -72,7 +48,7 @@ function App() {
             <Route path=":id" element={<ProductDetail />} />
           </Route>
           <Route path="/checkout" element={<Checkout />} />
-
+          <Route path="/signout" element={<SignOut />} />
           <Route path="*" element={<p>Page Not Found</p>} />
         </Routes>
       </CartContext.Provider>

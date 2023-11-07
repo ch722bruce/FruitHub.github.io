@@ -25,7 +25,6 @@ export default function ProductDetail() {
       {productDetail && (
         <div className="ProductDetail">
           <Title mainTitle={productDetail.name + " Product Detail"} />
-
           <table width="100%">
             <tbody>
               <tr>

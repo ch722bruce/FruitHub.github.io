@@ -1,25 +1,10 @@
-import React, { useEffect, useState } from "react";
-import API from "../API/API";
-import { Link , Routes, Route } from "react-router-dom";
+import React from "react";
+import {Link, Routes, Route} from "react-router-dom";
 import "../css/Navbar.css";
 import PropTypes from "prop-types";
 import Checkout from "./CheckOut";
 
-function Navbar({ isLogin }) {
-  let [user, setUser] = useState({});
-
-  useEffect(() => {
-    async function getUserInfo() {
-      try {
-        const res = await API.getUser();
-        console.log("User get in Profile", res);
-        setUser(res.user);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    getUserInfo();
-  }, []);
+function Navbar() {
 
   return (
     <div>
@@ -35,11 +20,15 @@ function Navbar({ isLogin }) {
               Carts {" "}
             </Link>
           </li>
+          {sessionStorage.getItem("userId")!==null &&(
+            <li className="nav-item stickToRight">
+              <Link to="/signout" className="brand nav-link">
+                Sign Out {" "}
+              </Link>
+            </li>)
+          }
         </ul>
       </nav>
-      <Routes>
-				<Route path="/checkout" element={user ? <Checkout/> : ""} />
-    </Routes>   
     </div>
   );
 }

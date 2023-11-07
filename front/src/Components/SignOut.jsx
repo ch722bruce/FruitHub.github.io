@@ -1,20 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../css/signOut.css";
+import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
+import API from "../API/API.js";
 
-function SignOut({userLogout}) {
-  return (
-    <div>
-      <Link to="/" onClick={userLogout} className="nav-link">
-        <span className="material-symbols-outlined icon">Sign Out</span> Sign Out
-      </Link>
-    </div>
-  );
+function SignOut() {
+  const navigate = useNavigate();
+  const userLogout = async () => {
+    sessionStorage.removeItem("userId");
+    await API.signOut();
+    navigate("/");
+  };
+  userLogout();
 }
-
-SignOut.prototype = {
-  userLogout: PropTypes.func,
-};
 
 export default SignOut;

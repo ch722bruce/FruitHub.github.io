@@ -1,17 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Title from "./Title";
 import "../CSS/comment.css";
 
+
 export default function CommentList(fruitId) {
   let [commentList, setCommentList] = useState(null);
-
+  const comment = useRef(null);
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`/api/comments/${fruitId.fruitId}`);
+      const data = await response.json();
+      setCommentList(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
-    fetch(`/api/comments/${fruitId.fruitId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCommentList(data)
-      });
+    fetchData();
   }, [fruitId.fruitId]);
+
+  const handleWriteComment=(e)=>{
+    e.preventDefault();
+    fetch("/api/comments/",{
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: sessionStorage.getItem("username"),
+        userId: sessionStorage.getItem("userId"),
+        fruitId: fruitId.fruitId,
+        text:comment.current
+      })
+    }).then((response)=>{
+      if(response.ok){
+        comment.current="";
+        fetchData();
+      }
+    }).catch((e)=>{
+      console.log(e);
+    });
+  }
 
   if (!commentList) {
     return <div>Loading...</div>; // Loading state while data is being fetched
@@ -38,6 +67,17 @@ export default function CommentList(fruitId) {
         ))}
       </div>
       </div>)}
+      <div className="writeComment">
+        <form>
+            <textarea className="commentInput"
+              type="text"
+              value={comment.current}
+              onChange={(e) => comment.current=(e.target.value)}
+              placeholder="Type your comment here..."
+            />
+        </form>
+        <button className="commentSubmit" onClick={handleWriteComment}>Submit</button>
+      </div>
     </>
   );
 }

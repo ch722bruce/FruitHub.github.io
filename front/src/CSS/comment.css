@@ -19,3 +19,18 @@
 .commentText {
     color: #666; /* Text color for the comment text */
 }
+
+.writeComment{
+    position: relative;
+    margin-top: 50px;
+}
+.commentInput{
+    padding: 10px;
+    font: message-box;
+    width: 100%;
+    height: 100px;
+}
+.commentSubmit{
+    position: absolute;
+    right: 0;
+}

@@ -4,19 +4,21 @@ import Title from "./Title";
 import QuantityBtn from "./QuantityBtn";
 
 export default function ProductList() {
-  let [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
     fetch("/api/fruits")
       .then((response) => response.json())
       .then((data) => setProductList(data));
-  }, []);
+  }
 
   return (
-    //React Fragment
     <>
       <Title mainTitle="FruitHub" />
-
       <div className="container">
         {productList.map((product) => (
           <React.Fragment key={product._id}>

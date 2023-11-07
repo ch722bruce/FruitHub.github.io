@@ -1,41 +1,30 @@
 import Title from "./Title";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import QuantityBtn from "./QuantityBtn";
 import { CartContext } from "./CartContext";
-import { useContext, useEffect, useState } from "react";
-import API from "../API/API";
+import { useContext, useEffect} from "react";
 import PropTypes from "prop-types";
 
-export default function Checkout({ isLogin, userLogout }) {
-  let [user, setUser] = useState({});
+export default function Checkout() {
   let { cartItems } = useContext(CartContext);
   let cartEmpty = cartItems.length <= 0;
-
   let grandTotal = cartItems.reduce((total, product) => {
     return (total + product.price.slice(1) * product.quantity);
   }, 0).toFixed(2);
   const freeShippingPrice = 99;
-
+  const navigate = useNavigate();
   useEffect(() => {
-    async function getUserInfo() {
-      try {
-        const res = await API.getUser();
-        console.log("User get in Profile", res);
-        setUser(res.user);
-      } catch (e) {
-        console.log(e);
-      }
+    if(!sessionStorage.getItem("userId")){
+      navigate("/");
     }
-    getUserInfo();
-  }, []);
+   }, [navigate]);
 
 
   return (
     <>
-      <Title mainTitle="Your Carts"  isLogin={isLogin} user={user} userLogout={userLogout}/>
-
+      <Title mainTitle="Your Carts"/>
       {cartEmpty && (
-        <div>
+        <div className="container">
           <div className="nothingInCart">
             Nothing in Your Carts
             <br />
@@ -47,7 +36,7 @@ export default function Checkout({ isLogin, userLogout }) {
       )}
 
       {!cartEmpty && (
-        <div className="container">
+        <div className="container checkoutContainer">
           <div className="cartSection">
             <table className="checkoutTable">
               <tbody>

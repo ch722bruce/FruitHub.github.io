@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import API from "../API/API";
 import "../css/signIn.css";
 import { useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function SignIn({ isLogin, setisLogin }) {
+function SignIn() {
   const [input, setInput] = useState({});
   const [loginmsg, setMsg] = useState("");
   let navigate = useNavigate();
@@ -15,6 +15,10 @@ function SignIn({ isLogin, setisLogin }) {
     setInput({ ...input, [name]: value });
   };
 
+  useEffect(()=>{
+    if(sessionStorage.getItem("userId")) navigate("/productlist");
+  })
+
   const onFormSubmit = async (event) => {
     console.log("Login Form Submit");
     event.preventDefault();
@@ -23,8 +27,8 @@ function SignIn({ isLogin, setisLogin }) {
       console.log("logged in");
       console.log(res.user);
       sessionStorage.setItem("user", res.user.email);
+      sessionStorage.setItem("username",res.user.fname)
       sessionStorage.setItem("userId", res.user._id);
-      setisLogin(true);
       // navigate("/productList", {state: {user: res.user}});
       navigate("/productList");
     } else {
