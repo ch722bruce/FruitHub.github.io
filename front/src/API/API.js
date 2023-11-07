@@ -1,8 +1,8 @@
 const API = {
   signIn: async (input) => {
       try {
-        const res = await fetch("/signIn", {
-          method: "post",
+        const res = await fetch("api/signIn", {
+          method: "POST",
           body: JSON.stringify(input),
           headers: {
             "Content-Type": "application/json",
@@ -17,7 +17,7 @@ const API = {
   
     signUp: async (input) => {
       try {
-        const res = await fetch("/signUp", {
+        const res = await fetch("/api/signUp", {
           method: "post",
           body: JSON.stringify(input),
           headers: {

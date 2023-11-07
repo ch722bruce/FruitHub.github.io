@@ -1,9 +1,26 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../css/home.css";
 import { useNavigate } from "react-router-dom";
+import API from "../API/API.js";
 
 function HomePage() {
   let navigate = useNavigate();
+
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const res = await API.getUser();
+        console.log("User get in Profile", res);
+        if(res.user) sessionStorage.setItem("userId",res.user._id);
+        if(sessionStorage.getItem("userId")){
+          navigate("/productlist");
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getUserInfo();
+  }, []);
 
   const goTologin = (event) => {
     event.preventDefault();

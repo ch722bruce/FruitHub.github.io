@@ -21,7 +21,9 @@ function SignIn({ isLogin, setisLogin }) {
     const res = await API.signIn(input);
     if (res.success) {
       console.log("logged in");
+      console.log(res.user);
       sessionStorage.setItem("user", res.user.email);
+      sessionStorage.setItem("userId", res.user._id);
       setisLogin(true);
       // navigate("/productList", {state: {user: res.user}});
       navigate("/productList");

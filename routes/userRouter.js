@@ -1,18 +1,12 @@
 import express from "express";
-import path from "path";
 import myEncrypt from "../encrypt/myEncrypt.js";
-import userDB from "../db/userDB.js";
-import bodyParser from "body-parser";
+import myDB from "../db/userDB.js";
 
-const app = express();
-app.use(bodyParser.json());
+
 let router = express.Router();
-const myDB = userDB;
-router.get("/", (req, res) => {
-  res.sendFile(path.join("../front/index.html"));
-});
 
-router.post("/signIn", async (req, res) => {
+
+router.post("/api/signIn", async (req, res) => {
   console.log("login data", req.body);
   const user = req.body;
   try {
@@ -44,7 +38,7 @@ router.get("/signOut", (req, res) => {
   res.json({ user: req.session.user });
 });
 
-router.post("/signUp", async (req, res) => {
+router.post("/api/signUp", async (req, res) => {
   const user = req.body;
   user.password = await myEncrypt.hashPassword(req.body.password);
   console.log("Register data to be added to DB", user);
