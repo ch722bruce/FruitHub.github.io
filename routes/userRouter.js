@@ -1,13 +1,13 @@
 import express from "express";
 import path from "path";
 import myEncrypt from "../encrypt/myEncrypt.js";
-import myDB from "../db/userDB.js";
+import userDB from "../db/userDB.js";
 import bodyParser from "body-parser";
 
 const app = express();
 app.use(bodyParser.json());
 let router = express.Router();
-
+const myDB = userDB;
 router.get("/", (req, res) => {
   res.sendFile(path.join("../front/index.html"));
 });

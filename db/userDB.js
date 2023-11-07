@@ -4,7 +4,7 @@ dotenv.config();
 
 function MyMongoDB() {
   const myDB = {};
-  const mongourl = process.env.MONGO_URL;
+  const mongourl = process.env.MONGODB_URI;
 
   myDB.findUser = async function (user) {
     const DB_NAME = "fruitHub";
@@ -25,10 +25,10 @@ function MyMongoDB() {
     }
   };
 
-  myDB.register = async function (user) {
+  myDB.signUp = async function (user) {
     const DB_NAME = "fruitHub";
     const COL_NAME = "users";
-    const client = new MongoClient(mongourl) || "mongodb://localhost:27017";
+    const client = new MongoClient(mongourl || "mongodb://localhost:27017");
     const usersColl = client.db(DB_NAME).collection(COL_NAME);
     try {
       const userInfo = await usersColl.findOne({ email: user.email });
