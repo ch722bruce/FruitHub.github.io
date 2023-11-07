@@ -104,7 +104,7 @@ npm run dev
 
 [Video]( /)
 
-[Slides]( /)
+[Slides](https://docs.google.com/presentation/d/14P9sTI-FGuUNTdSkbweUCTmTOifv4DBN13r62_3YqrA/edit?usp=sharing/)
 
 ## Copyright
 
