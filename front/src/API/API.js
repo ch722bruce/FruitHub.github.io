@@ -1,5 +1,5 @@
 const API = {
-    login: async (input) => {
+  signIn: async (input) => {
       try {
         const res = await fetch("/signIn", {
           method: "post",
@@ -15,7 +15,7 @@ const API = {
       }
     },
   
-    register: async (input) => {
+    signUp: async (input) => {
       try {
         const res = await fetch("/signUp", {
           method: "post",
@@ -67,7 +67,7 @@ const API = {
       }
     },
   
-    logout: async () => {
+    signOut: async () => {
       try {
         const res = await fetch("/signOut", {
           method: "get",

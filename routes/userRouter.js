@@ -6,17 +6,6 @@ import bodyParser from "body-parser";
 
 const app = express();
 app.use(bodyParser.json());
-
-app.post("/signUp", (req, res) => {
-  // Your sign-up logic here
-  res.status(200).json({ success: true, message: "User registered successfully" });
-});
-
-const PORT = 5173;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
-
 let router = express.Router();
 
 router.get("/", (req, res) => {
@@ -60,7 +49,7 @@ router.post("/signUp", async (req, res) => {
   user.password = await myEncrypt.hashPassword(req.body.password);
   console.log("Register data to be added to DB", user);
   try {
-    const userInfo = await myDB.register(user);
+    const userInfo = await myDB.signUp(user);
     if (userInfo) {
       res.json({ success: true, msg: "Successful register." });
     } else {
