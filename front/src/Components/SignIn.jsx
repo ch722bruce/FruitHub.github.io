@@ -18,7 +18,7 @@ function SignIn({ isLogin, setisLogin }) {
   const onFormSubmit = async (event) => {
     console.log("Login Form Submit");
     event.preventDefault();
-    const res = await API.login(input);
+    const res = await API.signIn(input);
     if (res.success) {
       console.log("logged in");
       sessionStorage.setItem("user", res.user.email);

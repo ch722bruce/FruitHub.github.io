@@ -18,7 +18,7 @@ function RegisterPage() {
     console.log("Form Submit");
     event.preventDefault();
     try {
-      const res = await API.register(input);
+      const res = await API.signUp(input);
       if (res && res.success) {
         navigate("/signIn");
       } else {
