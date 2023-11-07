@@ -14,8 +14,6 @@ const __dirname = dirname(__filename);
 
 let app = express();
 
-const port = process.env.PORT || 3001;
-
 app.use(
   session({
     secret: "mysecret",
@@ -36,8 +34,5 @@ app.use(bodyParser.json());
 app.use("/", indexRouter);
 app.use("/", userRouter);
 
-app.listen(port, () => {
-  console.log(`app listening on port ${port}`);
-});
 
 export default app;
