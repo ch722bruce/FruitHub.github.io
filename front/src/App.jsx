@@ -8,7 +8,6 @@ import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import { UserProvider } from "./Components/UserContext";
 import API from "./API/API";
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
   };
 
   return (
-    <UserProvider>
       <BrowserRouter>
         <CartContext.Provider value={{ cartItems, setCartItems }}>
           <nav>
@@ -76,7 +74,6 @@ function App() {
           </Routes>
         </CartContext.Provider>
       </BrowserRouter>
-    </UserProvider>
   );
 }
 

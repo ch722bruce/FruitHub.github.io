@@ -8,12 +8,28 @@ function Navbar() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // This function should update the `user` state with the session stored user
-    const sessionUser = sessionStorage.getItem("userId"); // or any other user-related key
-    if (sessionUser) {
-      setUser({}); // Set user to an empty object or fetch user details
-    }
+    const checkLoginStatus = () => {
+      const sessionUser = sessionStorage.getItem("userId");
+      if (sessionUser) {
+        // Assuming that you're storing the user id in session storage
+        setUser({ id: sessionUser });
+      } else {
+        setUser(null);
+      }
+    };
+
+    // Set up an event listener for login state changes
+    window.addEventListener("login", checkLoginStatus);
+
+    // Check login status on mount as well
+    checkLoginStatus();
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("login", checkLoginStatus);
+    };
   }, []);
+
 
   return (
     <div>
@@ -39,8 +55,8 @@ function Navbar() {
   );
 }
 
-Navbar.prototype = {
-  isLogin: PropTypes.bool,
-};
+Navbar.propTypes = {
+    isLogin: PropTypes.bool,
+  };
 
 export default Navbar;
