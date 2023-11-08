@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-// import "../css/LogoutIcon.css";
+import "../css/signOut.css";
 function SignOut() {
   let navigate = useNavigate();
 
@@ -15,7 +15,7 @@ function SignOut() {
 
   return (
     <div className="SignOutBtn">
-      <button onClick={goToSignOut} className="SignOutBtn">
+      <button onClick={goToSignOut} className="signOutButton">
         Sign Out
       </button>
     </div>
