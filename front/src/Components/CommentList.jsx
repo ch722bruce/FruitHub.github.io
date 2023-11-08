@@ -5,7 +5,7 @@ import "../CSS/comment.css";
 
 export default function CommentList(fruitId) {
   let [commentList, setCommentList] = useState(null);
-  const comment = useRef(null);
+  const comment = useRef("");
   const fetchData = async () => {
     try {
       const response = await fetch(`/api/comments/${fruitId.fruitId}`);
