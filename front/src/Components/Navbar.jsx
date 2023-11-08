@@ -5,9 +5,10 @@ import PropTypes from "prop-types";
 import SignOut from "./SignOut";
 
 function Navbar() {
-  const [user, setUser] = useState(null);
+  const [logged, setLogged] = useState(false);
 
   useEffect(() => {
+<<<<<<< HEAD
     const checkLoginStatus = () => {
       const sessionUser = sessionStorage.getItem("userId");
       if (sessionUser) {
@@ -28,6 +29,11 @@ function Navbar() {
     return () => {
       window.removeEventListener("login", checkLoginStatus);
     };
+=======
+    window.addEventListener("storage", () => {
+      setLogged(!logged);
+    });
+>>>>>>> refs/remotes/origin/main
   }, []);
 
 
@@ -46,10 +52,11 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="navbar-nav signout">
-          {/* Render the SignOut component only if `user` is not null */}
-          {user && <SignOut />}
-        </div>
+        {logged && (
+          <div className="navbar-nav signout">
+            <SignOut />
+          </div>
+        )}
       </nav>
     </div>
   );

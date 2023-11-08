@@ -29,6 +29,7 @@ function SignIn() {
       sessionStorage.setItem("user", res.user.email);
       sessionStorage.setItem("username",res.user.fname)
       sessionStorage.setItem("userId", res.user._id);
+      window.dispatchEvent(new Event('storage'));
       // navigate("/productList", {state: {user: res.user}});
       navigate("/productList");
     } else {
