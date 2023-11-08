@@ -38,11 +38,7 @@ Once logged in, users can seamlessly add their favorite fruits to their shopping
 For those who wish for regular fruit deliveries, there's an option to subscribe. Users can choose the frequency of their orders, ensuring they always have fresh produce at their disposal.
 
 4) Customers: Leave comments
-@Zhehao Xu
 After making a purchase, users are encouraged to leave comments on the product. This feedback helps other customers make informed choices and helps sellers improve their products and services.
-
-5) Admin Dashboard
-A comprehensive dashboard for shop owners and administrators. This tool helps in managing inventory, tracking sales, monitoring user feedback, and ensuring smooth operations. It's an essential feature that provides a real-time overview of the business and aids in strategic decision-making.
 
 ## Installation
 
@@ -78,25 +74,31 @@ npm run dev
 ## Preview
 
 [Thumbnail Page]
-< >
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/64b71528-c52e-4264-9787-be45a6fac335">
 
 [Login Page]
-< >
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/a927c0ef-cdd5-4a8a-a2ca-3d9b37d162fe" >
 
 [SignUp Page]
-< >
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/325e03a8-61d6-43f7-b48a-b021a11f7a53" >
 
-[App Page]
-< >
-< >
-< >
-< >
+[Home Page]
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/1f4bb7a5-e6dc-4fcb-943e-b9c5d5c69ee4" >
 
 [Product List Page]
-< >
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/8831f949-93c8-4651-90bc-ff33f55fc28e">
 
 [Product Detail Page]
-< >
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/077abaed-6041-4cdf-a235-80e4172cc3d8">
+
+[Subscribe Page]
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3a9df0c4-33cd-437e-b8f8-78f307a0bb3f">
+
+[Comment Page]
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/ba52954b-6d87-466f-bde1-61e47e543320">
+
+[Check Out Page]
+<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3eaaab11-bc85-47ea-8985-59b0c331002f">
 
 ## Demonstration
 
