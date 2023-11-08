@@ -34,7 +34,7 @@ export default function ProductList() {
 
   return (
     <>
-      <Title mainTitle="FruitHub" user={user} />
+      <Title mainTitle="Product Listing" user={user} />
       <div className="container">
         {productList.map((product) => (
           <React.Fragment key={product._id}>
