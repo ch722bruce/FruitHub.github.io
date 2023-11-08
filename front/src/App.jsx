@@ -8,6 +8,7 @@ import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
+import { UserProvider } from "./Components/UserContext";
 import API from "./API/API";
 
 function App() {
@@ -24,38 +25,58 @@ function App() {
     await API.logout();
   };
 
-
-
-
   return (
-    <BrowserRouter>
-      <CartContext.Provider value={{ cartItems, setCartItems }}>
-        <nav>
-          <Navbar />
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route
-            path="/signIn"
-            element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
-          />
-          <Route
-            path="/productList"
-            element={<ProductList isLogin={isLogin} setisLogin={setisLogin} userLogout={userLogout}/>}
-          />
-          <Route
-            path="/checkout"
-            element={<Checkout isLogin={isLogin}  setisLogin={setisLogin}userLogout={userLogout}/>}
-          />
-          <Route path="/product" element={<ProductDetail isLogin={isLogin} setisLogin={setisLogin} userLogout={userLogout}/>}>
-            <Route path=":id" element={<ProductDetail />} />
-          </Route>
-          {/* <Route path="/signout" element={<SignOut />} /> */}
-          <Route path="*" element={<p>Page Not Found</p>} />
-        </Routes>
-      </CartContext.Provider>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <CartContext.Provider value={{ cartItems, setCartItems }}>
+          <nav>
+            <Navbar />
+          </nav>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route
+              path="/signIn"
+              element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
+            />
+            <Route
+              path="/productList"
+              element={
+                <ProductList
+                  isLogin={isLogin}
+                  setisLogin={setisLogin}
+                  userLogout={userLogout}
+                />
+              }
+            />
+            <Route
+              path="/checkout"
+              element={
+                <Checkout
+                  isLogin={isLogin}
+                  setisLogin={setisLogin}
+                  userLogout={userLogout}
+                />
+              }
+            />
+            <Route
+              path="/product"
+              element={
+                <ProductDetail
+                  isLogin={isLogin}
+                  setisLogin={setisLogin}
+                  userLogout={userLogout}
+                />
+              }
+            >
+              <Route path=":id" element={<ProductDetail />} />
+            </Route>
+            {/* <Route path="/signout" element={<SignOut />} /> */}
+            <Route path="*" element={<p>Page Not Found</p>} />
+          </Routes>
+        </CartContext.Provider>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
