@@ -5,7 +5,7 @@ import "../CSS/comment.css";
 
 export default function CommentList(fruitId) {
   let [commentList, setCommentList] = useState(null);
-  const comment = useRef("");
+  let comment = useRef(undefined);
   const fetchData = async () => {
     try {
       const response = await fetch(`/api/comments/${fruitId.fruitId}`);
@@ -17,7 +17,7 @@ export default function CommentList(fruitId) {
   };
   useEffect(() => {
     fetchData();
-  }, [fruitId.fruitId]);
+  }, []);
 
   const handleWriteComment=(e)=>{
     e.preventDefault();
@@ -72,7 +72,7 @@ export default function CommentList(fruitId) {
             <textarea className="commentInput"
               type="text"
               value={comment.current}
-              onChange={(e) => comment.current=(e.target.value)}
+              onChange={(e) => comment.current=e.target.value}
               placeholder="Type your comment here..."
             />
         </form>
