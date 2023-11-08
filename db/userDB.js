@@ -37,6 +37,7 @@ function MyMongoDB() {
         return false;
       } else {
         console.log("Register successful.");
+        // eslint-disable-next-line no-unused-vars
         const res = await usersColl.insertOne(user);
         return true;
       }

@@ -69,6 +69,7 @@ const API = {
   
     signOut: async () => {
       try {
+        // eslint-disable-next-line no-unused-vars
         const res = await fetch("/api/signOut", {
           method: "get",
         });
@@ -80,7 +81,7 @@ const API = {
   
     getUser: async () => {
       try {
-        const res = await fetch("/getUser", {
+        const res = await fetch("/api/getUser", {
           method: "get",
           headers: {
             "Content-Type": "application/json",

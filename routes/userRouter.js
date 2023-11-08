@@ -29,7 +29,7 @@ router.post("/api/signIn", async (req, res) => {
   }
 });
 
-router.get("/getUser", (req, res) => {
+router.get("/api/getUser", (req, res) => {
   res.json({ user: req.session.user });
 });
 

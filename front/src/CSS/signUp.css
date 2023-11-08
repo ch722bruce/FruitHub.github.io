@@ -17,7 +17,7 @@
     padding: 50px;
     /* background-color: white; */
     width: 500px;
-    height: 700px;
+    height: 800px;
     border-radius: 1rem;
     box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   }
@@ -123,5 +123,3 @@
   .registerBtn:hover {
     background-color: #3ec1e6;
   }
-
-  

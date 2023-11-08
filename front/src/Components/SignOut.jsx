@@ -1,16 +1,28 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
-import API from "../API/API.js";
-
+import { useNavigate } from "react-router-dom";
+// import "../css/LogoutIcon.css";
 function SignOut() {
-  const navigate = useNavigate();
-  const userLogout = async () => {
-    sessionStorage.removeItem("userId");
-    await API.signOut();
-    navigate("/");
+  let navigate = useNavigate();
+
+  const goToSignOut = () => {
+    // Clear user session data
+    sessionStorage.clear(); // Or specific keys like sessionStorage.removeItem('user')
+    
+    // Redirect to the home page
+    navigate('/');
   };
-  userLogout();
+
+  return (
+    <div className="SignOutBtn">
+      <button onClick={goToSignOut} className="SignOutBtn">
+        Sign Out
+      </button>
+    </div>
+  )
 }
+SignOut.prototype = {
+  userLogout: PropTypes.func,
+};
 
 export default SignOut;

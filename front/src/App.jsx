@@ -8,11 +8,21 @@ import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-
-import SignOut from "./Components/SignOut.jsx";
+import API from "./API/API";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+
+  const [isLogin, setisLogin] = useState(
+    sessionStorage.getItem("user") !== null &&
+      sessionStorage.getItem("user") !== "null"
+  );
+
+  const userLogout = async () => {
+    sessionStorage.setItem("user", null);
+    setisLogin(false);
+    await API.logout();
+  };
 
 
 
@@ -28,27 +38,20 @@ function App() {
           <Route path="/signUp" element={<SignUp />} />
           <Route
             path="/signIn"
-            element={<SignIn />}
+            element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
           />
           <Route
             path="/productList"
-            element={<ProductList />}
+            element={<ProductList isLogin={isLogin} setisLogin={setisLogin} userLogout={userLogout}/>}
           />
           <Route
             path="/checkout"
-            element={<Checkout/>}
+            element={<Checkout isLogin={isLogin}  setisLogin={setisLogin}userLogout={userLogout}/>}
           />
-          {/* <Route path="/productList" element={<ProductList />} />
-          <Route path="/checkout" element={<Checkout />} /> */}
-          {/* <Route
-              path="/login"
-              element={<SignIn isLogin={SignIn} setisLogin={setSignIn} />}
-            /> */}
-          <Route path="/product" element={<ProductDetail />}>
+          <Route path="/product" element={<ProductDetail isLogin={isLogin} setisLogin={setisLogin} userLogout={userLogout}/>}>
             <Route path=":id" element={<ProductDetail />} />
           </Route>
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/signout" element={<SignOut />} />
+          {/* <Route path="/signout" element={<SignOut />} /> */}
           <Route path="*" element={<p>Page Not Found</p>} />
         </Routes>
       </CartContext.Provider>

@@ -1,10 +1,12 @@
 import React from "react";
-import {Link, Routes, Route} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "../css/Navbar.css";
 import PropTypes from "prop-types";
-import Checkout from "./CheckOut";
+import SignOut from "./SignOut";
+
 
 function Navbar() {
+
 
   return (
     <div>
@@ -20,14 +22,10 @@ function Navbar() {
               Carts {" "}
             </Link>
           </li>
-          {sessionStorage.getItem("userId")!==null &&(
-            <li className="nav-item stickToRight">
-              <Link to="/signout" className="brand nav-link">
-                Sign Out {" "}
-              </Link>
-            </li>)
-          }
         </ul>
+        <div className="navbar-nav signout">
+          <SignOut />
+          </div>
       </nav>
     </div>
   );
