@@ -88,15 +88,15 @@ function RegisterPage() {
               name="program"
               value={input.program}
               onChange={setupInput}
-              className="form-select selectBox"
+              className="form-control selectBox"
               required={true}
               id="program"
               placeholder=" "
               aria-label="program"
             >
               <option value=""> </option>
-              <option value="general"> Customers </option>
-              <option value="admin">Admins</option>
+              <option value="general"> Customer </option>
+              <option value="vendor">Vendor </option>
             </select>
             <label className="registerform-label">You are</label>
           </div>

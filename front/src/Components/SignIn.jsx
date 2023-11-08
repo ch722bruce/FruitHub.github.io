@@ -76,6 +76,26 @@ function SignIn() {
               </label>
             </div>
 
+            <div className="form-div">
+            <select
+              name="program"
+              value={input.program}
+              onChange={setupInput}
+              className="form-control selectBox"
+              required={true}
+              id="program"
+              placeholder=" "
+              aria-label="program"
+            >
+              <option value=""> </option>
+              <option value="general"> Customer </option>
+              <option value="vendor">Vendor</option>
+              <option value="admin">Admins</option>
+            </select>
+            <label className="registerform-label">You are</label>
+          </div>
+
+
             <button className="loginBtn">Login In</button>
             <div>
               Do not have an account yet?

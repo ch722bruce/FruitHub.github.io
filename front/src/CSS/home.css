@@ -1,28 +1,54 @@
+/* General layout */
 .home {
     width: 80%;
-    margin: auto;
+    margin: auto; /* Centers the .home content horizontally */
     text-align: center;
   }
   
+  /* Greeting section styling */
   .greeting {
-    margin-top: 250px;
-    margin-bottom: 80px;
-    text-align: center;
+    margin-top: 200px; /* You can adjust this to better suit your design */
+    margin-bottom: 60px; /* Provides space before the next content section */
+    text-align: center; /* Ensures text is centered within the greeting */
   }
   
+  /* Welcome message styling */
   .welcome {
-    /* color: rgb(255, 255, 255); */
-    font-size: 54px;
-    margin-bottom: 20px;
+    font-size: 54px; /* Large font size for emphasis */
+    color: #333; /* Dark grey for readability, can use any color palette */
+    margin-bottom: 10px; /* Space before the next element */
+    font-weight: 300; /* Lighter font-weight for a modern, airy feel */
+    text-transform: uppercase; /* Stylistic choice for uppercase letters */
+    letter-spacing: 2px; /* Increases spacing between characters */
   }
   
+  /* Button styling */
   button {
-    border: 0;
-    background: none;
-    margin-right: 30px;
+    margin-bottom: 10%;
+    border: none;
+    padding: 10px 20px; /* Adds space inside the button */
+    background-color: #007bff; /* Example button color, choose what fits your design */
+    color: #fff; /* White text color for contrast */
+    margin-right: 30px; /* Space between buttons */
+    cursor: pointer; /* Changes mouse cursor to signify button functionality */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
   }
   
   button:hover {
-    color: rgb(127, 127, 127);
-    border-bottom: 1px solid;
+    background-color: #0056b3; /* Darker shade on hover for a nice effect */
+    border-bottom: 2px solid #fff; /* Solid underline for emphasis */
+  }
+  
+  /* Background styling */
+  #background {
+    width: 25%; /* Example width, adjust as needed */
+    height: 25vh; /* Example height, adjust as needed */
+    margin: 50px auto; /* Centers the div horizontally and adds vertical space */
+    background: url("../images/homebackground.jpeg") center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Optional: adds rounded corners to the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
   }

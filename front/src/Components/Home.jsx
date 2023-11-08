@@ -24,9 +24,11 @@ function HomePage() {
 
   return (
     <div className="home">
+    
       <div className="greeting">
         <h2>Welcome to </h2>
         <h1 className="welcome">FruitHub</h1>
+        <section id="background"></section>
         <span>Order Fresh Fruit Now</span>
       </div>
       <button onClick={goTologin} className="toLoginBtn">
@@ -35,6 +37,7 @@ function HomePage() {
       <button onClick={goToRegister} className="toRegisterBtn">
         Sign up
       </button>
+    
     </div>
   );
 }
