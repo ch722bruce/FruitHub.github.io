@@ -6,10 +6,7 @@ function SignOut() {
   let navigate = useNavigate();
 
   const goToSignOut = () => {
-    // Clear user session data
-    sessionStorage.clear(); // Or specific keys like sessionStorage.removeItem('user')
-    
-    // Redirect to the home page
+    sessionStorage.clear(); 
     navigate('/');
   };
 
