@@ -1,12 +1,17 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 import PropTypes from "prop-types";
 import SignOut from "./SignOut";
 
-
 function Navbar() {
+  const [logged, setLogged] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      setLogged(!logged);
+    });
+  }, []);
 
   return (
     <div>
@@ -19,13 +24,15 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link to="/checkout" className="brand nav-link">
-              Carts {" "}
+              Carts{" "}
             </Link>
           </li>
         </ul>
-        <div className="navbar-nav signout">
-          <SignOut />
+        {logged && (
+          <div className="navbar-nav signout">
+            <SignOut />
           </div>
+        )}
       </nav>
     </div>
   );
