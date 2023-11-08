@@ -74,31 +74,47 @@ npm run dev
 ## Preview
 
 [Thumbnail Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/64b71528-c52e-4264-9787-be45a6fac335">
+<img width="1270" alt="thumbnail" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/64b71528-c52e-4264-9787-be45a6fac335">
+
+
 
 [Login Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/a927c0ef-cdd5-4a8a-a2ca-3d9b37d162fe" >
+<img width="1270" alt="signIn" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/a927c0ef-cdd5-4a8a-a2ca-3d9b37d162fe" >
+
+
 
 [SignUp Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/325e03a8-61d6-43f7-b48a-b021a11f7a53" >
+<img width="1270" alt="signUp" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/325e03a8-61d6-43f7-b48a-b021a11f7a53" >
+
+
 
 [Home Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/1f4bb7a5-e6dc-4fcb-943e-b9c5d5c69ee4" >
+<img width="1270" alt="home" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/1f4bb7a5-e6dc-4fcb-943e-b9c5d5c69ee4" >
+
+
 
 [Product List Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/8831f949-93c8-4651-90bc-ff33f55fc28e">
+<img width="1270" alt="productList" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/8831f949-93c8-4651-90bc-ff33f55fc28e">
+
+
 
 [Product Detail Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/077abaed-6041-4cdf-a235-80e4172cc3d8">
+<img width="1270" alt="productDetail" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/077abaed-6041-4cdf-a235-80e4172cc3d8">
+
+
 
 [Subscribe Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3a9df0c4-33cd-437e-b8f8-78f307a0bb3f">
+<img width="1270" alt="subscribe" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3a9df0c4-33cd-437e-b8f8-78f307a0bb3f">
+
+
 
 [Comment Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/ba52954b-6d87-466f-bde1-61e47e543320">
+<img width="1270" alt="comment" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/ba52954b-6d87-466f-bde1-61e47e543320">
+
+
 
 [Check Out Page]
-<img width="1270" alt="Preview2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3eaaab11-bc85-47ea-8985-59b0c331002f">
+<img width="1270" alt="checkout" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3eaaab11-bc85-47ea-8985-59b0c331002f">
 
 ## Demonstration
 
