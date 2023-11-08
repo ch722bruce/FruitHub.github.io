@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 import "../css/signOut.css";
+import {useNavigate} from "react-router-dom";
 function SignOut() {
-  let navigate = useNavigate();
-
+  const navigate = useNavigate();
   const goToSignOut = () => {
-    sessionStorage.clear(); 
+    sessionStorage.clear();
     navigate('/');
+    window.dispatchEvent(new Event('storage'));
   };
-
   return (
     <div className="SignOutBtn">
       <button onClick={goToSignOut} className="signOutButton">

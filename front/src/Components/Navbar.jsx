@@ -5,14 +5,12 @@ import PropTypes from "prop-types";
 import SignOut from "./SignOut";
 
 function Navbar() {
-  const [user, setUser] = useState(null);
+  const [logged, setLogged] = useState(false);
 
   useEffect(() => {
-    // This function should update the `user` state with the session stored user
-    const sessionUser = sessionStorage.getItem("userId"); // or any other user-related key
-    if (sessionUser) {
-      setUser({}); // Set user to an empty object or fetch user details
-    }
+    window.addEventListener("storage", () => {
+      setLogged(!logged);
+    });
   }, []);
 
   return (
@@ -30,10 +28,11 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="navbar-nav signout">
-          {/* Render the SignOut component only if `user` is not null */}
-          {user && <SignOut />}
-        </div>
+        {logged && (
+          <div className="navbar-nav signout">
+            <SignOut />
+          </div>
+        )}
       </nav>
     </div>
   );
