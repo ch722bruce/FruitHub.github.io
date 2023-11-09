@@ -5,10 +5,11 @@ export default function SubscribeBtn({ productInfo }) {
   const [subscriptionInfo, setSubscriptionInfo] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const [isSubscribing, setIsSubscribing] = useState(false);
-  const freq = useRef("Daily");
+  let freq = useRef(null);
   const apiUrl = "/api/users/subscriptions";
 
   useEffect(() => {
+
     fetch(apiUrl +"?"+
         new URLSearchParams({
           userId: sessionStorage.getItem("userId"),
@@ -27,7 +28,7 @@ export default function SubscribeBtn({ productInfo }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        freq: freq.current,
+        freq: freq.current==null?"Daily":freq.current,
         userId: sessionStorage.getItem("userId"),
         fruitId: productInfo._id,
       }),
