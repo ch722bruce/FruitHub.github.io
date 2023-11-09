@@ -6,12 +6,15 @@
   "author": "Chuanzhao Huang & Zhehao Xu",
   "license": "MIT",
   "scripts": {
-    "build": "npm install && cd front && npm install && npm run dev",
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "build": "npm install && cd front && npm install",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "frontend": "cd front && npm run dev",
     "initDB": "mongoimport -d photoSharing -c photos --jsonArray db/initialPhotoSharingData.json"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
