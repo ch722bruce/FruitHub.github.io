@@ -91,5 +91,5 @@ export default function Checkout() {
 
 Checkout.prototype = {
   isLogin: PropTypes.bool,
-  userLogout: PropTypes.func,
+  userLogout: PropTypes.func.isRequired
 };
