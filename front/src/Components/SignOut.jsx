@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../css/signOut.css";
+import "../CSS/signOut.css";
 import {useNavigate} from "react-router-dom";
 function SignOut() {
   const navigate = useNavigate();

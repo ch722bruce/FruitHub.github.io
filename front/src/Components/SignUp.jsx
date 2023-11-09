@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import API from "../API/API";
-import "../css/signUp.css";
+import "../CSS/signUp.css";
 import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
