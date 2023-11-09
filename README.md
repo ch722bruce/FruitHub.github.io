@@ -19,8 +19,7 @@ Instructor: John Alexis Guerra Gómez
 
 Created By:
 [Zhehao Xu](https://zhehao9758.github.io/Zhehao-portfolio/)  &
-[Chuanzhao Huang](https://chuanzhaohuang.github.io/)
-Release: [Homepage](https://fruithub-kcyx.onrender.com/)  
+[Chuanzhao Huang](https://chuanzhaohuang.github.io/)                                                                              Release: [Homepage](https://fruithub-kcyx.onrender.com/)  
 
 ## Project Objective
 
@@ -51,9 +50,7 @@ npm start
 
 Which will start the backend server, running on <http://localhost:3000>.
 
-### Database
 
-This application assumes that you have a Mongo server running on localhost:27017, or configured in the `MONGOMONGODB_URI` environment variable. For initializing the database you can run the command `npm run initDB` which will run `mongoimport` on the [./db/initialPhotoSharingData.json](./db/initialPhotoSharingData.json) data, and will create a `photoSharing` database with a `photos` collection
 
 ### Frontend
 
@@ -120,7 +117,7 @@ npm run dev
 
 [Mockup](https://www.figma.com/file/1fF493BQYAyzJn8wudSi0d/FruitHub-Design?type=whiteboard&node-id=0%3A1&t=HLYiwqAJ2ZpFWfwp-1/)
 
-[Video]( /)
+[Video](https://youtu.be/kZ0zx2YDI88/)
 
 [Slides](https://docs.google.com/presentation/d/14P9sTI-FGuUNTdSkbweUCTmTOifv4DBN13r62_3YqrA/edit?usp=sharing/)
 
