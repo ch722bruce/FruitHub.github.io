@@ -19,7 +19,9 @@ Instructor: John Alexis Guerra Gómez
 
 Created By:
 [Zhehao Xu](https://zhehao9758.github.io/Zhehao-portfolio/)  &
-[Chuanzhao Huang](https://chuanzhaohuang.github.io/)                                                                              Release: [Homepage](https://fruithub-kcyx.onrender.com/)  
+[Chuanzhao Huang](https://chuanzhaohuang.github.io/)                                                                              
+
+Release: [Homepage](https://fruithub-kcyx.onrender.com/)  
 
 ## Project Objective
 
