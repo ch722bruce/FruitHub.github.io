@@ -6,8 +6,8 @@
   "author": "Chuanzhao Huang & Zhehao Xu",
   "license": "MIT",
   "scripts": {
-    "build": "npm install && cd front && npm install",
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js && cd front && npm run dev",
+    "build": "npm install && cd front && npm install && npm run dev",
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
     "initDB": "mongoimport -d photoSharing -c photos --jsonArray db/initialPhotoSharingData.json"
   },
   "dependencies": {
