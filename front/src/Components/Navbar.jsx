@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/Navbar.css";
+import "../CSS/Navbar.css";
 import PropTypes from "prop-types";
 import SignOut from "./SignOut";
 
