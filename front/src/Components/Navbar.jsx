@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 import PropTypes from "prop-types";
@@ -7,11 +7,9 @@ import SignOut from "./SignOut";
 function Navbar() {
   const [logged, setLogged] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("storage", () => {
-      setLogged(!logged);
-    });
-  }, []);
+  window.addEventListener("storage", () => {
+    setLogged(!logged);
+  });
 
 
   return (
