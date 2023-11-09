@@ -6,8 +6,8 @@
   "author": "Chuanzhao Huang & Zhehao Xu",
   "license": "MIT",
   "scripts": {
-    "build": "npm install && cd front && npm install && npm run build",
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "build": "npm install && cd front && npm install",
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js && cd front && npm run dev",
     "initDB": "mongoimport -d photoSharing -c photos --jsonArray db/initialPhotoSharingData.json"
   },
   "dependencies": {
@@ -29,5 +29,8 @@
     "eslint-plugin-react": "^7.33.2",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.18.0 <19.0.0"
   }
 }
