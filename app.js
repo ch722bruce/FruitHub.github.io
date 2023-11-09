@@ -3,8 +3,7 @@ import path, { dirname } from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import { fileURLToPath } from "url";
-import bodyParser from "body-parser";
-import session from "express-session";
+import session from "cookie-session";
 import indexRouter from "./routes/index.js";
 import userRouter from "./routes/userRouter.js";
 
@@ -20,7 +19,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 600000 },
-  })
+  }),
 );
 
 app.use(logger("dev"));
@@ -28,9 +27,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "front", "dist")));
-
-app.use(bodyParser.json());
-
 app.use("/", indexRouter);
 app.use("/", userRouter);
 
