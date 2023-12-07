@@ -19,7 +19,9 @@ export default function Checkout() {
     }
    }, [navigate]);
 
-
+// In the section below, good use of conditional rendering with (cartEmpty && and !cartEmpty &&) to display different states 
+// of the cart as it changes based on what is taken away and what is added into the cart.
+// Good way to make it dynamic
   return (
     <>
       <Title mainTitle="Your Carts"/>
