@@ -234,19 +234,37 @@ nav a:visited {
 }
 
 .search-bar-container {
-  margin-top: 20px; /* Adjust as needed */
-  text-align: center; /* Center align the search bar */
+  margin-top: 20px;
+  text-align: center;
 }
 
 .search-bar-container form {
-  /* Additional styling for the form */
+  display: inline-block; /* Aligns form contents in a line */
+  padding: 10px;
 }
 
 .search-bar-container input {
   margin-right: 10px;
-  /* Styling for the input field */
+  padding: 8px 15px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Slightly rounded corners */
+  outline: none; /* Removes the default focus outline */
+}
+
+.search-bar-container input:focus {
+  border-color: #007bff; /* Highlight color when focused */
 }
 
 .search-bar-container button {
-  /* Styling for the button */
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  cursor: pointer; /* Cursor indicates clickable button */
+  outline: none;
+}
+
+.search-bar-container button:hover {
+  background-color: #0056b3; /* Slightly darker color on hover */
 }
