@@ -27,7 +27,7 @@
     margin-bottom: 10%;
     border: none;
     padding: 10px 20px; /* Adds space inside the button */
-    background-color: #007bff; /* Example button color, choose what fits your design */
+    background-color: #44803F; /* Example button color, choose what fits your design */
     color: #fff; /* White text color for contrast */
     margin-right: 30px; /* Space between buttons */
     cursor: pointer; /* Changes mouse cursor to signify button functionality */
@@ -35,7 +35,7 @@
   }
   
   button:hover {
-    background-color: #0056b3; /* Darker shade on hover for a nice effect */
+    background-color: #146152; /* Darker shade on hover for a nice effect */
     border-bottom: 2px solid #fff; /* Solid underline for emphasis */
   }
   

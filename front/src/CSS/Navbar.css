@@ -15,7 +15,7 @@
     margin: 5%;
     padding: 10px; /* Adjust the padding to your preference */
     border-radius: 5px; /* Adjust the border-radius to your preference */
-    background-color: rgb(0, 121, 202); /* This sets the background color to red */
+    background-color: #44803F; /* This sets the background color to red */
     color: white; /* This sets the text color to white, assuming that's what you want */
     text-decoration: none; /* This removes the underline from the links */
   }
@@ -23,7 +23,7 @@
   /* Changes the color to white on hover and maintains the red background */
   .nav-item .brand.nav-link:hover {
     color: white; /* This ensures text color stays white on hover */
-    background-color: rgb(3, 66, 150); /* Optional: Change to a darker red on hover */
+    background-color: #146152/* Optional: Change to a darker red on hover */
   }
 
 .nav-link {
@@ -34,7 +34,7 @@
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #007bff; /* Highlight color on hover or focus */
+  color: #146152; /* Highlight color on hover or focus */
 }
 
 .navbar-nav {

@@ -16,11 +16,11 @@ body {
   width: 300px;
   margin: 5px;
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #FFEC5C;
   padding: 10px 10px;
 }
 .containerItem:hover {
-  background-color: rgb(221, 255, 228);
+  background-color: #B4CF66;
 }
 h1 {
   text-align: center;
@@ -58,13 +58,13 @@ img {
 .addToCartBtn {
   padding: 15px 20px;
   border-radius: 6px;
-  background-color: #1c3455;
+  background-color: #44803F;
   color: #fff;
   cursor: pointer;
 }
 
 .subtractBtn {
-  background-color: #1c3455;
+  background-color: #44803F;
   font-weight: bold;
   color: #fff;
   border-radius: 6px;
@@ -74,7 +74,7 @@ img {
   cursor: pointer;
 }
 .addBtn {
-  background-color: #1c3455;
+  background-color: #44803F;
   font-weight: bold;
   color: #fff;
   border-radius: 6px;
@@ -84,7 +84,7 @@ img {
   cursor: pointer;
 }
 .backToGoodsListBtn {
-  background-color: #1c3455;
+  background-color: #44803F;
   font-weight: bold;
   border-radius: 6px;
   margin: 50px auto;
@@ -117,23 +117,27 @@ img {
 .cartSection {
   width: 70%;
 }
+
+.checkoutContainer{
+  background-color: #FFEC5C;
+}
 .checkoutTable {
   width: 100%;
   text-align: left;
   border-spacing: 0px;
 }
 .checkoutTable tr {
-  background-color: antiquewhite;
+  background-color: #FFEC5C;
   margin: 10px 10px;
   border-bottom-width: 2px;
 }
 .checkoutTable td {
-  padding: 0px;
+  padding: 5px;
   font-size: 16px;
 }
 .checkoutTable img {
   width: 150px;
-  margin: 15px;
+  margin: 10px;
 }
 .productSubTotal {
   font-size: 30px;
@@ -151,7 +155,7 @@ img {
 }
 .checkoutSection button {
   font-size: 22px;
-  background-color: #0d3164;
+  background-color: #44803F;
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
@@ -175,7 +179,7 @@ img {
   color: forestgreen;
 }
 .noShipping {
-  color: brown;
+  color: #FF5A33;
   font-weight: bold;
 }
 nav {
@@ -184,14 +188,14 @@ nav {
   top: 0;
   padding: 30px 0px;
   width: 100%;
-  background-color: #1c3455;
+  background-color: #FFEC5C;
 }
 nav a {
   font-size: 20px;
   text-decoration: none;
   margin: 10px 10px;
   padding: 13px 40px;
-  background-color: #1c3455;
+  background-color: #146152;
   border-radius: 8px;
   font-weight: bold;
   color: black;
@@ -218,19 +222,16 @@ nav a:visited {
   margin-left: 30px;
   padding: 15px 20px;
   border-radius: 6px;
-  background-color: #1c3455;
+  background-color: #44803F;
   color: #fff;
   cursor: pointer;
 }
 .subscribeBtn {
   padding: 15px 34px;
   border-radius: 6px;
-  background-color: #1c3455;
+  background-color: #44803F;
   color: #fff;
   cursor: pointer;
-}
-.checkoutContainer{
-  background-color: antiquewhite;
 }
 
 .search-bar-container {
@@ -252,19 +253,19 @@ nav a:visited {
 }
 
 .search-bar-container input:focus {
-  border-color: #007bff; /* Highlight color when focused */
+  border-color: #44803F; /* Highlight color when focused */
 }
 
 .search-bar-container button {
   padding: 8px 15px;
   border: none;
   border-radius: 4px;
-  background-color: #007bff; /* Primary button color */
+  background-color: #44803F; /* Primary button color */
   color: white;
   cursor: pointer; /* Cursor indicates clickable button */
   outline: none;
 }
 
 .search-bar-container button:hover {
-  background-color: #0056b3; /* Slightly darker color on hover */
+  background-color: #146152; /* Slightly darker color on hover */
 }
