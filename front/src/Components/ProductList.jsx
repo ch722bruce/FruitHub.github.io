@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import QuantityBtn from "./QuantityBtn";
+// import SearchBar from "./SearchBar";
 import PropTypes from "prop-types";
 import API from "../API/API";
 
 export default function ProductList() {
   let [user, setUser] = useState({});
   const [productList, setProductList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); 
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -32,9 +36,34 @@ export default function ProductList() {
     getUserInfo();
   }, []);
 
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const foundProduct = productList.find(product => 
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (foundProduct) {
+      navigate(`/product/${foundProduct._id}`); // Corrected usage of navigate
+    } else {
+      alert("Product not found");
+    }
+  };
+  
+
   return (
     <>
       <Title mainTitle="Product Listing" user={user} />
+      <div className="search-bar-container">
+      <form onSubmit={handleSearchSubmit}>
+        <input 
+          type="text" 
+          placeholder="Search products..." 
+          value={searchTerm} 
+          onChange={(e) => setSearchTerm(e.target.value)} 
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
       <div className="container">
         {productList.map((product) => (
           <React.Fragment key={product._id}>
@@ -56,6 +85,7 @@ export default function ProductList() {
           </React.Fragment>
         ))}
       </div>
+
     </>
   );
 }

@@ -232,3 +232,21 @@ nav a:visited {
 .checkoutContainer{
   background-color: antiquewhite;
 }
+
+.search-bar-container {
+  margin-top: 20px; /* Adjust as needed */
+  text-align: center; /* Center align the search bar */
+}
+
+.search-bar-container form {
+  /* Additional styling for the form */
+}
+
+.search-bar-container input {
+  margin-right: 10px;
+  /* Styling for the input field */
+}
+
+.search-bar-container button {
+  /* Styling for the button */
+}
