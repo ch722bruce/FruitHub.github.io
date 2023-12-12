@@ -60,14 +60,18 @@
     z-index: 0;
     /* margin-bottom: 40px; */
     display: block;
-    padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     border-radius: 0.375rem;
-    border: 0;
+    border: 10;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 3px 5px #80868b; /* Subtle shadow for depth */
+    padding: 20px; /* Space inside the box */
+    text-align: center; /* Center-align text */
   }
-  
+
   .form-label {
     position: absolute;
     left: 1rem;
@@ -99,20 +103,20 @@
   }
   
   .inputBox:valid {
-    /* background-color: rgb(248, 244, 226); */
+    background-color: rgb(248, 244, 226);
   }
   
   .loginBtn {
     width: 400px;
     height: 40px;
-    background-color: #0087e8;
+    background-color: #44803F;
     color: rgb(0, 0, 0);
     border: none;
     margin-bottom: 30px;
   }
   
   .loginBtn:hover {
-    background-color: #3ec1e6;
+    background-color: #146152;
   }
   
   .signup-link {
@@ -146,7 +150,7 @@
   
   /* Focus style for the select element */
   .form-control.inputBox:focus {
-    border-color: #4A90E2;
+    border-color: #B4CF66;
     box-shadow: 0 0 0 3px rgba(74,144,226,0.3);
   }
   
@@ -159,6 +163,15 @@
     padding: 10px;
   }
 
+
+  .selectBox { /* Combined styles for input and select */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    outline: none;
+  }
   .selectBox:not(:placeholder-shown).selectBox:not(:focus) + .registerform-label {
     top: -0.5rem;
     left: 0.8rem;
@@ -167,3 +180,6 @@
     font-weight: 500;
     z-index: 10;
   }
+
+
+  

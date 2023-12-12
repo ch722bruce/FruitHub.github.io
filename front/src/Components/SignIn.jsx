@@ -1,23 +1,26 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import API from "../API/API";
 import "../CSS/signIn.css";
 import { useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function SignIn() {
-  const [input, setInput] = useState({});
+  const [input, setInput] = useState({ email: "", password: "", program: "" });
   const [loginmsg, setMsg] = useState("");
   let navigate = useNavigate();
 
   const setupInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setInput({ ...input, [name]: value });
+    const { name, value } = e.target;
+    setInput(prevInput => {
+      const updatedInput = { ...prevInput, [name]: value };
+      console.log(updatedInput); // Log the updated state
+      return updatedInput;
+    });
   };
 
-  useEffect(()=>{
-    if(sessionStorage.getItem("userId")) navigate("/productlist");
-  })
+  useEffect(() => {
+    if (sessionStorage.getItem("userId")) navigate("/productlist");
+  });
 
   const onFormSubmit = async (event) => {
     console.log("Login Form Submit");
@@ -27,9 +30,9 @@ function SignIn() {
       console.log("logged in");
       console.log(res.user);
       sessionStorage.setItem("user", res.user.email);
-      sessionStorage.setItem("username",res.user.fname)
+      sessionStorage.setItem("username", res.user.fname);
       sessionStorage.setItem("userId", res.user._id);
-      window.dispatchEvent(new Event('storage'));
+      window.dispatchEvent(new Event("storage"));
       // navigate("/productList", {state: {user: res.user}});
       navigate("/productList");
     } else {
@@ -51,7 +54,7 @@ function SignIn() {
                 value={input.email || ""}
                 type="email"
                 className="form-control inputBox"
-                placeholder="."
+                placeholder=" "
                 id="email"
                 aria-label="email"
               />
@@ -69,7 +72,7 @@ function SignIn() {
                 value={input.password || ""}
                 type="password"
                 className="form-control inputBox"
-                placeholder="."
+                placeholder=" "
                 id="InputPassword"
               />
               <label htmlFor="password" className="form-label">
@@ -78,24 +81,23 @@ function SignIn() {
             </div>
 
             <div className="form-div">
-            <select
-              name="program"
-              value={input.program}
-              onChange={setupInput}
-              className="form-control selectBox"
-              required={true}
-              id="program"
-              placeholder=" "
-              aria-label="program"
-            >
-              <option value=""> </option>
-              <option value="general"> Customer </option>
-              <option value="vendor">Vendor</option>
-              <option value="admin">Admins</option>
-            </select>
-            <label className="registerform-label">You are</label>
-          </div>
-
+              <select
+                name="program"
+                value={input.program}
+                onChange={setupInput}
+                className="form-control selectBox"
+                required={true}
+                id="program"
+                placeholder=" "
+                aria-label="program"
+              >
+                <option value="">  </option>
+                <option value="general"> Customer </option>
+                <option value="vendor">Vendor</option>
+                <option value="admin">Admins</option>
+              </select>
+              <label className="registerform-label">You are</label>
+            </div>
 
             <button className="loginBtn">Login In</button>
             <div>

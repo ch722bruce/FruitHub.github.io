@@ -1,6 +1,6 @@
 :root {
     /*===== Colores =====*/
-    --first-color: #1a73e8;
+    --first-color: #B4CF66;
     --input-color: #80868b;
     --border-color: #dadce0;
   
@@ -33,7 +33,15 @@
     width: 400px;
   }
   
-  .registerBox,
+  .registerBox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+
   .selectBox {
     margin-bottom: 20px;
     position: absolute;
@@ -50,12 +58,15 @@
     z-index: 0;
     /* margin-bottom: 40px; */
     display: block;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.5;
     border-radius: 0.375rem;
-    border: 0;
+    border: 10;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 3px 5px #80868b; /* Subtle shadow for depth */
+    text-align: center; /* Center-align text */
   }
   
   .registerform-label {
@@ -115,11 +126,11 @@
     width: 400px;
     height: 40px;
     margin-top: 20px;
-    background-color: #0087e8;
+    background-color: #44803F;
     color: rgb(0, 0, 0);
     border: none;
   }
   
   .registerBtn:hover {
-    background-color: #3ec1e6;
+    background-color: #146152;
   }
