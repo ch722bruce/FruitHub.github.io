@@ -7,7 +7,7 @@ FruitHub emerges as a modern marketplace dedicated solely to fresh fruits. By of
 ### Project 3 : FruitHub
 
 #### [FruitHub Verision 1](Link: https://fruithub-kcyx.onrender.com )
-#### [FruitHub Verision 2](Link: https://)
+#### [FruitHub Verision 2](Link: https://fruithubv2.onrender.com/)
 
 Based on JavaScript, CSS, HTML, and Bootstrap v5.3.2, Express Node, Node JS, MongoDB@7, React, Vite.
 
@@ -22,7 +22,7 @@ Created By:
 [Zhehao Xu](https://zhehao9758.github.io/Zhehao-portfolio/)  &
 [Chuanzhao Huang](https://chuanzhaohuang.github.io/)                                                                              
 
-Lastest Release: [Homepage](https://)  
+Lastest Release: [Homepage](https://fruithubv2.onrender.com/)  
 
 ## Project Objective
 
@@ -67,9 +67,9 @@ Which will start the backend server, running on <http://localhost:5173>.
 
 ### Fonts
 The information displayed on this app follows Roboto font.
-1) 
-2) 
-3) 
+1) FRUITHUB Logo: 'Roboto', sans-serif.
+
+2) Text: "Tangerine", serif.
 
 ## Preview
 ### Version 1

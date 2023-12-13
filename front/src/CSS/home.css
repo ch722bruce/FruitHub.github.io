@@ -7,7 +7,7 @@
   
   /* Greeting section styling */
   .greeting {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Tangerine", serif;
     color: #333;
     margin-top: 200px; /* You can adjust this to better suit your design */
     margin-bottom: 60px; /* Provides space before the next content section */
@@ -16,7 +16,7 @@
   
   /* Welcome message styling */
   .welcome {
-    font-family: "Tangerine", serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 54px; /* Large font size for emphasis */
     color: #333; /* Dark grey for readability, can use any color palette */
     margin-bottom: 10px; /* Space before the next element */
