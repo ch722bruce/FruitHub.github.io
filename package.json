@@ -10,7 +10,7 @@
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
     "frontend": "cd front && npm run dev",
-    "initDB": "mongoimport -d photoSharing -c photos --jsonArray db/initialPhotoSharingData.json"
+    "initDB": "mongoimport -d photoSharing -c photos --jsonArray db/MOCK_DATA.json"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

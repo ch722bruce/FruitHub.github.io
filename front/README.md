@@ -1,3 +1,5 @@
+This readme file is a part of vite's template and is unnecessary for the project.
+I suggest deleting it.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
