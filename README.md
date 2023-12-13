@@ -2,7 +2,7 @@
 
 FruitHub emerges as a modern marketplace dedicated solely to fresh fruits. By offering users the ability to browse, purchase, and learn more about various fruit products, we aim to bridge the gap between fruit enthusiasts and premium quality produce.
 
-## CS5610-Project-three
+## CS5610-Project-three/four
 
 ### Project 3 : FruitHub
 
@@ -100,7 +100,7 @@ The information displayed on this app follows Roboto font.
 [Check Out Page] V1
 <img width="1270" alt="checkout" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/3eaaab11-bc85-47ea-8985-59b0c331002f">
 
-### Verision 2
+### Version 2
 [Thumbnail Page] V2
 <img width="1270" alt="thumbnail V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/76a7c028-5f63-4227-a842-8f30823fdc51">
 
