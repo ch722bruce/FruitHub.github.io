@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import API from "../API/API.js";
 import {useNavigate} from "react-router-dom";
@@ -7,6 +7,7 @@ export default function SubscribeBtn({ productInfo }) {
   const [subscriptionInfo, setSubscriptionInfo] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const [isSubscribing, setIsSubscribing] = useState(false);
+  let subQuant = useRef();
   const navigate = useNavigate();
   let freq = useRef(null);
   const apiUrl = "/api/users/subscriptions";
@@ -30,6 +31,11 @@ export default function SubscribeBtn({ productInfo }) {
   }, [productInfo._id]);
 
   const handleSubscribe = async () => {
+    const quant = subQuant.current.value;
+    if(!quant || quant <= 0) {
+      alert("Please input a valid quantity");
+      return;
+    }
     const userId = await API.getUser();
     fetch(apiUrl, {
       method: "PUT",
@@ -40,6 +46,7 @@ export default function SubscribeBtn({ productInfo }) {
         freq: freq.current == null ? "Daily" : freq.current,
         userId: userId.user.id,
         fruitId: productInfo._id,
+        quantity: quant
       }),
     })
       .then((response) => {
@@ -93,6 +100,20 @@ export default function SubscribeBtn({ productInfo }) {
     <div>
       {isSubscribing === true && (
         <div className="modal-content">
+          <input
+            ref={subQuant}
+            defaultValue="1"
+            name="sub-quant"
+            required={true}
+            type="number"
+            step="1"
+            min="1"
+            placeholder="quantity"
+            id="sub-quant"
+            aria-label="number"
+          />
+          <label htmlFor="number" className="form-label">
+          </label>
           <select
             value={freq.current}
             onChange={(e) => freq.current = e.target.value}
