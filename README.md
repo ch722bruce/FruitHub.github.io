@@ -62,7 +62,7 @@ Which will start the backend server, running on <http://localhost:5173>.
 
 ## Color Palette and Fonts Choice
 ### Color Palette 
-<img width="1270" alt="thumbnail"scr="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/437f6c54-4bd8-44c5-8b9a-9c7866792c08">
+<img width="1270" alt="color palette" scr="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/437f6c54-4bd8-44c5-8b9a-9c7866792c08">
 
 ### Fonts
 The information displayed on this app follows Roboto font.
