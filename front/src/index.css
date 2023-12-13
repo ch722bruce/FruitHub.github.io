@@ -219,7 +219,7 @@ nav a:visited {
   user-select: none; /* standard property */
 }
 .unsubscribeBtn {
-  margin-left: 30px;
+  margin-top: 10px;
   padding: 15px 20px;
   border-radius: 6px;
   background-color: #44803F;

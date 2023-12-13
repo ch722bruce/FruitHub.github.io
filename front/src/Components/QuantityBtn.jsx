@@ -52,18 +52,18 @@ export default function QuantityBtn({ productInfo }) {
   return (
     <div className="addToCart">
       {numInCart === 0 ? (
-        <span className="addToCartBtn" onClick={handleAdd}>
+        <button className="addToCartBtn" onClick={handleAdd}>
           Add to Carts
-        </span>
+        </button>
       ) : (
         <div>
-          <span className="subtractBtn" onClick={handleSubtract}>
+          <button className="subtractBtn" onClick={handleSubtract}>
             -
-          </span>
+          </button>
           {numInCart}
-          <span className="addBtn" onClick={handleAdd}>
+          <button className="addBtn" onClick={handleAdd}>
             +
-          </span>
+          </button>
         </div>
       )}
     </div>

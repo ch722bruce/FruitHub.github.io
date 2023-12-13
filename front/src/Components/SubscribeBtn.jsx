@@ -130,17 +130,17 @@ export default function SubscribeBtn({ productInfo }) {
       )}
       {isSubscribing === false && subscriptionInfo && (
         <div className="subscribe">
-          <span> ✅Subscribed</span>
-          <span className="unsubscribeBtn" onClick={handleUnsubscribe}>
-            Unsubscribed?
-          </span>
+          <div> ✅Subscribed</div>
+          <button className="unsubscribeBtn" onClick={handleUnsubscribe}>
+            Unsubscribe
+          </button>
         </div>
       )}
       {isSubscribing === false && !subscriptionInfo && (
         <div className="subscribe">
-          <span className="subscribeBtn" onClick={startSubscribe}>
+          <button className="subscribeBtn" onClick={startSubscribe}>
             Subscribe
-          </span>
+          </button>
         </div>
       )}
     </div>
