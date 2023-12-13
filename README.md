@@ -138,7 +138,7 @@ The information displayed on this app follows Roboto font.
 
 [Usabilty Study Report](https://github.com/ch722bruce/FruitHub.github.io/blob/main/Usability%20Study%20Reports.pdf)
 
-[Video V2](https://youtu.be/kZ0zx2YDI88/)
+[Video V2](https://youtu.be/CLYgOVjU7Bs/)
 
 [Slides V2](https://docs.google.com/presentation/d/1w8yZ5nqxNeDhdZqlHO9CSTc93h6fWrHXVdQSOjbR0Yc/edit?usp=sharing/)
 
