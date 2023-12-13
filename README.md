@@ -56,7 +56,7 @@ npm install
 npm start
 ```
 
-Which will start the backend server, running on <http://localhost:5173>.
+Which will start on <http://localhost:5173>.
 
 
 
