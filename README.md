@@ -138,7 +138,7 @@ The information displayed on this app follows Roboto font.
 
 [Video V2](https://youtu.be/kZ0zx2YDI88/)
 
-[Slides V2](https://docs.google.com/presentation/d/14P9sTI-FGuUNTdSkbweUCTmTOifv4DBN13r62_3YqrA/edit?usp=sharing/)
+[Slides V2](https://docs.google.com/presentation/d/1w8yZ5nqxNeDhdZqlHO9CSTc93h6fWrHXVdQSOjbR0Yc/edit?usp=sharing/)
 ## Copyright
 
 This webpage takes advantage of templates from bootstrap. This project is under MIT license. All modified image resources could be distributed with same methods. Photos of myself will be shared with CC 4.0 BY-NC-ND license.
