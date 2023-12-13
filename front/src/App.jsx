@@ -8,21 +8,11 @@ import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import API from "./API/API";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const [isLogin, setisLogin] = useState(
-    sessionStorage.getItem("user") !== null &&
-      sessionStorage.getItem("user") !== "null"
-  );
 
-  const userLogout = async () => {
-    sessionStorage.setItem("user", null);
-    setisLogin(false);
-    await API.logout();
-  };
 
   return (
       <BrowserRouter>
@@ -35,36 +25,24 @@ function App() {
             <Route path="/signUp" element={<SignUp />} />
             <Route
               path="/signIn"
-              element={<SignIn isLogin={isLogin} setisLogin={setisLogin} />}
+              element={<SignIn />}
             />
             <Route
               path="/productList"
               element={
-                <ProductList
-                  isLogin={isLogin}
-                  setisLogin={setisLogin}
-                  userLogout={userLogout}
-                />
+                <ProductList />
               }
             />
             <Route
               path="/checkout"
               element={
-                <Checkout
-                  isLogin={isLogin}
-                  setisLogin={setisLogin}
-                  userLogout={userLogout}
-                />
+                <Checkout />
               }
             />
             <Route
               path="/product"
               element={
-                <ProductDetail
-                  isLogin={isLogin}
-                  setisLogin={setisLogin}
-                  userLogout={userLogout}
-                />
+                <ProductDetail />
               }
             >
               <Route path=":id" element={<ProductDetail />} />

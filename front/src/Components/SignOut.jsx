@@ -1,13 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../CSS/signOut.css";
 import {useNavigate} from "react-router-dom";
+
 function SignOut() {
   const navigate = useNavigate();
   const goToSignOut = () => {
-    sessionStorage.clear();
-    navigate('/');
-    window.dispatchEvent(new Event('storage'));
+    fetch("/api/signOut", {
+      method: "POST",
+    }).then(() => {
+      navigate('/');
+      window.dispatchEvent(new Event('storage'));
+    });
   };
   return (
     <div className="SignOutBtn">
@@ -17,8 +20,6 @@ function SignOut() {
     </div>
   )
 }
-SignOut.prototype = {
-  userLogout: PropTypes.func,
-};
+
 
 export default SignOut;

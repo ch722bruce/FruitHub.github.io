@@ -1,42 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 import API from "../API/API";
 import "../CSS/signIn.css";
 import { useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function SignIn() {
-  const [input, setInput] = useState({ email: "", password: "", program: "" });
-  const [loginmsg, setMsg] = useState("");
+  const input = useRef({ email: "", password: "", program: "" });
   let navigate = useNavigate();
 
   const setupInput = (e) => {
     const { name, value } = e.target;
-    setInput(prevInput => {
-      const updatedInput = { ...prevInput, [name]: value };
-      console.log(updatedInput); // Log the updated state
-      return updatedInput;
-    });
+    input.current = { ...input.current, [name]: value }
   };
-
-  useEffect(() => {
-    if (sessionStorage.getItem("userId")) navigate("/productlist");
-  });
 
   const onFormSubmit = async (event) => {
     console.log("Login Form Submit");
     event.preventDefault();
-    const res = await API.signIn(input);
-    if (res.success) {
-      console.log("logged in");
-      console.log(res.user);
-      sessionStorage.setItem("user", res.user.email);
-      sessionStorage.setItem("username", res.user.fname);
-      sessionStorage.setItem("userId", res.user._id);
+    const res = await API.signIn(input.current);
+    if (res.redirected) {
       window.dispatchEvent(new Event("storage"));
       // navigate("/productList", {state: {user: res.user}});
       navigate("/productList");
     } else {
-      setMsg(res.msg);
+      alert("Wrong email or password")
     }
   };
 
@@ -51,7 +37,6 @@ function SignIn() {
                 name="email"
                 required={true}
                 onChange={setupInput}
-                value={input.email || ""}
                 type="email"
                 className="form-control inputBox"
                 placeholder=" "
@@ -61,7 +46,6 @@ function SignIn() {
               <label htmlFor="email" className="form-label">
                 Email
               </label>
-              <div className="loginmsg">{loginmsg}</div>
             </div>
 
             <div className="form-div">
@@ -69,7 +53,6 @@ function SignIn() {
                 name="password"
                 required={true}
                 onChange={setupInput}
-                value={input.password || ""}
                 type="password"
                 className="form-control inputBox"
                 placeholder=" "
@@ -83,7 +66,6 @@ function SignIn() {
             <div className="form-div">
               <select
                 name="program"
-                value={input.program}
                 onChange={setupInput}
                 className="form-control selectBox"
                 required={true}

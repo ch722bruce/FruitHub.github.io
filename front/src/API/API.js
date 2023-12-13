@@ -1,18 +1,14 @@
 const API = {
   signIn: async (input) => {
-      try {
-        const res = await fetch("api/signIn", {
+    const res = await fetch("api/signIn", {
           method: "POST",
-          body: JSON.stringify(input),
+          body: JSON.stringify({username: input.email, password: input.password}),
           headers: {
             "Content-Type": "application/json",
           },
         });
-        const loginRes = await res.json();
-        return loginRes;
-      } catch (e) {
-        console.log(e);
-      }
+    console.log(res);
+    return res;
     },
   
     signUp: async (input) => {
@@ -66,18 +62,7 @@ const API = {
         console.log(e);
       }
     },
-  
-    signOut: async () => {
-      try {
-        // eslint-disable-next-line no-unused-vars
-        const res = await fetch("/api/signOut", {
-          method: "get",
-        });
-        console.log("User logout");
-      } catch (e) {
-        console.log(e);
-      }
-    },
+
   
     getUser: async () => {
       try {
