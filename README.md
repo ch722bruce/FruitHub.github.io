@@ -4,7 +4,7 @@ FruitHub emerges as a modern marketplace dedicated solely to fresh fruits. By of
 
 ## CS5610-Project-three/four
 
-### Project 3 : FruitHub
+### Project 3/4 : FruitHub
 
 #### [FruitHub Verision 1](Link: https://fruithub-kcyx.onrender.com/)
 #### [FruitHub Verision 2](Link: https://fruithubv2.onrender.com/)
