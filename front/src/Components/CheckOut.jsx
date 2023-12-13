@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import QuantityBtn from "./QuantityBtn";
 import { CartContext } from "./CartContext";
 import { useContext, useEffect } from "react";
-import PropTypes from "prop-types";
+import API from "../API/API.js";
 
 export default function Checkout() {
   let { cartItems } = useContext(CartContext);
@@ -15,11 +15,19 @@ export default function Checkout() {
     .toFixed(2);
   const freeShippingPrice = 99;
   const navigate = useNavigate();
+
   useEffect(() => {
-    if (!sessionStorage.getItem("userId")) {
-      navigate("/");
+    async function getUserInfo() {
+      try {
+        const res = await API.getUser();
+        console.log("User get in Profile!", res);
+        if(!res.user) navigate("/");
+      } catch (e) {
+        console.log(e);
+      }
     }
-  }, [navigate]);
+    getUserInfo();
+  }, []);
 
   return (
     <>
@@ -98,7 +106,3 @@ export default function Checkout() {
   );
 }
 
-Checkout.prototype = {
-  isLogin: PropTypes.bool,
-  userLogout: PropTypes.func.isRequired,
-};

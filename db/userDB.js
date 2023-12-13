@@ -4,7 +4,7 @@ dotenv.config();
 
 function MyMongoDB() {
   const myDB = {};
-  const mongourl = process.env.MONGODB_URI;
+  const mongourl = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
   myDB.findUser = async function (user) {
     const DB_NAME = "fruitHub";

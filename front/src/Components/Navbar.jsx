@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Navbar.css";
-import PropTypes from "prop-types";
 import SignOut from "./SignOut";
+import API from "../API/API.js";
 
 function Navbar() {
   const [logged, setLogged] = useState(false);
@@ -10,6 +10,20 @@ function Navbar() {
   window.addEventListener("storage", () => {
     setLogged(!logged);
   });
+
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const res = await API.getUser();
+        console.log("User get in Profile!", res);
+        if(res.user) setLogged(true);
+        else setLogged(false);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getUserInfo();
+  }, []);
 
 
   return (
@@ -38,9 +52,5 @@ function Navbar() {
     </div>
   );
 }
-
-Navbar.propTypes = {
-    isLogin: PropTypes.bool,
-  };
 
 export default Navbar;

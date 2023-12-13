@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import API from "../API/API";
 
 export default function ProductList() {
-  let [user, setUser] = useState({});
   const [productList, setProductList] = useState([]);
   const [searchTerm, setSearchTerm] = useState(''); 
 
@@ -28,7 +27,7 @@ export default function ProductList() {
       try {
         const res = await API.getUser();
         console.log("User get in Profile!", res);
-        setUser(res.user);
+        if(!res.user) navigate("/");
       } catch (e) {
         console.log(e);
       }
@@ -52,7 +51,7 @@ export default function ProductList() {
 
   return (
     <>
-      <Title mainTitle="Product Listing" user={user} />
+      <Title mainTitle="Product Listing" />
       <div className="search-bar-container">
       <form onSubmit={handleSearchSubmit}>
         <input 
