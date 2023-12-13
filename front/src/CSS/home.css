@@ -7,6 +7,7 @@
   
   /* Greeting section styling */
   .greeting {
+    font-family: "Tangerine", serif;
     margin-top: 200px; /* You can adjust this to better suit your design */
     margin-bottom: 60px; /* Provides space before the next content section */
     text-align: center; /* Ensures text is centered within the greeting */
@@ -14,6 +15,7 @@
   
   /* Welcome message styling */
   .welcome {
+    font-family: "Tangerine", serif;
     font-size: 54px; /* Large font size for emphasis */
     color: #333; /* Dark grey for readability, can use any color palette */
     margin-bottom: 10px; /* Space before the next element */
@@ -24,6 +26,7 @@
   
   /* Button styling */
   button {
+    font-family: "Tangerine", serif;
     margin-bottom: 10%;
     border: none;
     padding: 10px 20px; /* Adds space inside the button */

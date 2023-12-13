@@ -11,12 +11,15 @@
   }
   
   .wrapper {
+    font-family: "Tangerine", serif;
+    font-size: 100%;
     display: flex;
     align-items: center;
     /* height: 750px; */
   }
   
   .loginPanel {
+    font-family: "Tangerine", serif;
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -29,6 +32,7 @@
   }
   
   .loginTitle {
+    font-family: "Tangerine", serif;
     text-align: center;
     margin-bottom: 50px;
     font-family: "JK Abode", sans-serif;
@@ -36,16 +40,21 @@
   }
   
   .loginForm {
+    font-family: "Tangerine", serif;
     width: 400px;
   }
   
   .form-div {
+    font-family: "Tangerine", serif;
     position: relative;
     height: 56px;
     margin-bottom: 1.5rem;
   }
-  .form-control,
+  .form-control{
+    font-family: "Tangerine", serif;
+  }
   .inputBox {
+    font-family: "Tangerine", serif;
     position: absolute;
     top: 0;
     left: 0;
@@ -73,6 +82,7 @@
   }
 
   .form-label {
+    font-family: "Tangerine", serif;
     position: absolute;
     left: 1rem;
     top: 10px;
@@ -85,6 +95,7 @@
   }
   
   .inputBox:focus + .form-label {
+    font-family: "Tangerine", serif;
     top: -0.5rem;
     left: 0.8rem;
     color: var(--input-color);
@@ -107,6 +118,7 @@
   }
   
   .loginBtn {
+    font-family: "Tangerine", serif;
     width: 400px;
     height: 40px;
     background-color: #44803F;
@@ -120,6 +132,7 @@
   }
   
   .signup-link {
+    font-family: "Tangerine", serif;
     margin-left: 20px;
     color: rgb(54, 54, 54);
   }
@@ -142,6 +155,7 @@
   
   /* Style for label */
   .form-label {
+    font-family: "Tangerine", serif;
     display: block;
     margin-bottom: 5px;
     color: #333;
@@ -165,6 +179,7 @@
 
 
   .selectBox { /* Combined styles for input and select */
+    font-family: "Tangerine", serif;
     width: 100%;
     padding: 10px;
     border: 1px solid var(--border-color);

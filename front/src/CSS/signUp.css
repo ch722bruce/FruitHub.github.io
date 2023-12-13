@@ -5,12 +5,13 @@
     --border-color: #dadce0;
   
     /*===== Fuente y tipografia =====*/
-    --body-font: "Roboto", sans-serif;
+    --font-family: "Tangerine", serif;
     --normal-font-size: 1rem;
     --small-font-size: 0.75rem;
   }
   
   .registerPanel {
+    font-family: "Tangerine", serif;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
@@ -23,6 +24,7 @@
   }
   
   .registerTitle {
+    font-family: "Tangerine", serif;
     text-align: center;
     margin-bottom: 30px;
     font-family: "JK Abode", sans-serif;
@@ -30,10 +32,12 @@
   }
   
   .registerForm {
+    font-family: "Tangerine", serif;
     width: 400px;
   }
   
   .registerBox {
+    font-family: "Tangerine", serif;
     width: 100%;
     padding: 10px;
     border: 1px solid var(--border-color);
@@ -43,6 +47,7 @@
   }
 
   .selectBox {
+    font-family: "Tangerine", serif;
     margin-bottom: 20px;
     position: absolute;
     top: 0;
@@ -70,6 +75,7 @@
   }
   
   .registerform-label {
+    font-family: "Tangerine", serif;
     position: absolute;
     left: 1rem;
     top: 10px;
@@ -123,6 +129,7 @@
   }
   
   .registerBtn {
+    font-family: "Tangerine", serif;
     width: 400px;
     height: 40px;
     margin-top: 20px;

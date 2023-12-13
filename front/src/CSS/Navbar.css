@@ -7,6 +7,7 @@
 }
 
 .brand, .nav-link, .nav-link, nav {
+  font-family: "Tangerine", serif;
   color: #555555; /* Unified color for text */
   padding: 10px; /* Consistent padding */
   border-radius: 5px; /* Rounded corners */
