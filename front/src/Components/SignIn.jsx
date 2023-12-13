@@ -57,6 +57,7 @@ function SignIn() {
                 className="form-control inputBox"
                 placeholder=" "
                 id="InputPassword"
+                aria-label="password"
               />
               <label htmlFor="password" className="form-label">
                 Password

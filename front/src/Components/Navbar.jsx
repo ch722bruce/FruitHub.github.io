@@ -35,7 +35,7 @@ function Navbar() {
               Main{" "}
             </Link>
           </li>
-          <h2>Find Your Fresh Fruit </h2>
+          <li className="nav-title">Find Your Fresh Fruit </li>
           <li className="nav-item">
             <Link to="/checkout" className="nav-link">
               Carts{" "}

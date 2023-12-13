@@ -49,7 +49,11 @@ h2 {
   position: absolute;
   right: 0;
 }
-
+.nav-title{
+  color: #44803F;
+  font-size: 1.5em; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+}
 /* Additional CSS for a clean and modern look */
 .nav-item {
   margin: 0 15px; /* Spacing between nav items */
