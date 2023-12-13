@@ -6,7 +6,7 @@ FruitHub emerges as a modern marketplace dedicated solely to fresh fruits. By of
 
 ### Project 3 : FruitHub
 
-#### [FruitHub Verision 1](Link: https://fruithub-kcyx.onrender.com )
+#### [FruitHub Verision 1](Link: https://fruithub-kcyx.onrender.com/)
 #### [FruitHub Verision 2](Link: https://fruithubv2.onrender.com/)
 
 Based on JavaScript, CSS, HTML, and Bootstrap v5.3.2, Express Node, Node JS, MongoDB@7, React, Vite.
@@ -135,6 +135,8 @@ The information displayed on this app follows Roboto font.
 [Video V1](https://youtu.be/kZ0zx2YDI88/)
 
 [Slides V1](https://docs.google.com/presentation/d/14P9sTI-FGuUNTdSkbweUCTmTOifv4DBN13r62_3YqrA/edit?usp=sharing/)
+
+[Usabilty Study Report](https://github.com/ch722bruce/FruitHub.github.io/blob/main/Usability%20Study%20Reports.pdf)
 
 [Video V2](https://youtu.be/kZ0zx2YDI88/)
 
