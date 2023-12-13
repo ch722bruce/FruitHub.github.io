@@ -29,7 +29,7 @@ function Navbar() {
   return (
     <div>
       <nav id="mainNavbar" className="navbar navbar-expand-md fixed-top">
-        <ul className="navbar-nav">
+        <ul className={`navbar-nav ${logged?'nav-center':''}`}>
           <li className="nav-item">
             <Link to="/" className="nav-link">
               Main{" "}
@@ -41,10 +41,10 @@ function Navbar() {
               Carts{" "}
             </Link>
           </li>
-          
         </ul>
+
         {logged && (
-          <div className="navbar-nav signout">
+          <div className="navbar-signout signout">
             <SignOut />
           </div>
         )}
