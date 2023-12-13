@@ -49,6 +49,8 @@ To enhance the shopping experience, customers can utilize a powerful search bar 
 
 ## Installation
 
+In this part you can also add instructions on how to use the mock data.
+
 Clone the repository and then do:
 
 ```bash
@@ -72,6 +74,8 @@ The information displayed on this app follows Roboto font.
 2) Text: "Tangerine", serif.
 
 ## Preview
+I would suggest making the preview screenshots into gifs.
+
 ### Version 1
 [Thumbnail Page] V1
 <img width="1270" alt="thumbnail" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/64b71528-c52e-4264-9787-be45a6fac335">
