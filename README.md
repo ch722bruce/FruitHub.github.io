@@ -102,7 +102,7 @@ The information displayed on this app follows Roboto font.
 
 ### Verision 2
 [Thumbnail Page] V2
-<img width="1270" alt="thumbnail V2" src="">
+<img width="1270" alt="thumbnail V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/76a7c028-5f63-4227-a842-8f30823fdc51">
 
 [Login Page] V2
 <img width="1270" alt="signIn V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/c4ab1f2c-2730-47e2-8a98-924e05fdf541" >
