@@ -102,31 +102,31 @@ The information displayed on this app follows Roboto font.
 
 ### Verision 2
 [Thumbnail Page] V2
-<img width="1270" alt="thumbnail" src="">
+<img width="1270" alt="thumbnail V2" src="">
 
 [Login Page] V2
-<img width="1270" alt="signIn" src="" >
+<img width="1270" alt="signIn V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/c4ab1f2c-2730-47e2-8a98-924e05fdf541" >
 
 [SignUp Page] V2
-<img width="1270" alt="signUp" src="" >
+<img width="1270" alt="signUp V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/35e4d7d3-cd6a-4b2d-a77d-24d79827e51e" >
 
 [Home Page]
-<img width="1270" alt="home" src="" >
+<img width="1270" alt="home V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/d0e811ed-e384-4ab3-87d5-e06a850529cb" >
 
 [Product List Page] V2
-<img width="1270" alt="productList" src="">
+<img width="1270" alt="productList V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/aa887a9f-4f55-4505-9b43-4e3ba01143dd">
 
 [Product Detail Page] V2
-<img width="1270" alt="productDetail" src="">
+<img width="1270" alt="productDetail V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/a45008af-94ac-4c6b-a81f-aad866f05080">
 
 [Subscribe Page] V2
-<img width="1270" alt="subscribe" src="">
+<img width="1270" alt="subscribe V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/0e055811-0fc1-4df1-a04a-c1f87b9ac0c">
 
 [Comment Page] V2
-<img width="1270" alt="comment" src="">
+<img width="1270" alt="comment V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/328a146b-e2b9-4b0e-9cda-00796dda1aec">
 
 [Check Out Page] V2
-<img width="1270" alt="checkout" src="">
+<img width="1270" alt="checkout V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/09697e72-7f64-4306-ae0a-80ada5b44582">
 
 ## Demonstration
 
@@ -139,6 +139,7 @@ The information displayed on this app follows Roboto font.
 [Video V2](https://youtu.be/kZ0zx2YDI88/)
 
 [Slides V2](https://docs.google.com/presentation/d/1w8yZ5nqxNeDhdZqlHO9CSTc93h6fWrHXVdQSOjbR0Yc/edit?usp=sharing/)
+
 ## Copyright
 
 This webpage takes advantage of templates from bootstrap. This project is under MIT license. All modified image resources could be distributed with same methods. Photos of myself will be shared with CC 4.0 BY-NC-ND license.
