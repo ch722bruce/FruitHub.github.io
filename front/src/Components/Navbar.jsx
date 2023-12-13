@@ -17,15 +17,17 @@ function Navbar() {
       <nav id="mainNavbar" className="navbar navbar-expand-md fixed-top">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/" className="brand nav-link">
+            <Link to="/" className="nav-link">
               Main{" "}
             </Link>
           </li>
+          <h2>Find Your Fresh Fruit </h2>
           <li className="nav-item">
-            <Link to="/checkout" className="brand nav-link">
+            <Link to="/checkout" className="nav-link">
               Carts{" "}
             </Link>
           </li>
+          
         </ul>
         {logged && (
           <div className="navbar-nav signout">

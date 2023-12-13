@@ -1,45 +1,32 @@
 #mainNavbar {
   width: 80%;
   margin: auto;
+  display: flex; /* Ensures flexbox layout */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
 }
 
-.brand {
-  color: rgb(0, 0, 0);
-  margin: 0;
+.brand, .nav-link, .nav-link, nav {
+  color: #555555; /* Unified color for text */
+  padding: 10px; /* Consistent padding */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Removes the underline */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-.brand:hover {
-  color: rgb(198, 197, 197);
-}
-.nav-item .brand.nav-link {
-    margin: 5%;
-    padding: 10px; /* Adjust the padding to your preference */
-    border-radius: 5px; /* Adjust the border-radius to your preference */
-    background-color: #44803F; /* This sets the background color to red */
-    color: white; /* This sets the text color to white, assuming that's what you want */
-    text-decoration: none; /* This removes the underline from the links */
-  }
-  
-  /* Changes the color to white on hover and maintains the red background */
-  .nav-item .brand.nav-link:hover {
-    color: white; /* This ensures text color stays white on hover */
-    background-color: #146152/* Optional: Change to a darker red on hover */
-  }
-
-.nav-link {
-  padding: 0.5rem 1rem; /* Vertical and horizontal padding for nav links */
-  color: #555555; /* A slightly lighter grey for regular nav items */
-  transition: color 0.3s ease-in-out; /* Smooth color transition for hover */
+h2 {
+  color: #44803F;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #146152; /* Highlight color on hover or focus */
+.brand:hover, .nav-link:hover, .nav-link-carts:hover {
+  color: white; /* White text on hover */
+  background-color: #146152; /* Dark green background on hover */
 }
 
 .navbar-nav {
-  height: 40px;
-  /* vertical-align: bottom; */
+  display: flex; /* Flexbox layout for navbar items */
+  align-items: center; /* Align items vertically */
+  height: 40px; /* Fixed height for navbar */
 }
 
 .signout {
@@ -50,14 +37,31 @@
 }
 
 .signout:hover {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #146152; /* Consistent color for hover underline */
 }
 
 .material-symbols-outlined {
   font-size: 25px;
-  font-weight: lighter;
 }
+
 .stickToRight {
   position: absolute;
   right: 0;
+}
+
+/* Additional CSS for a clean and modern look */
+.nav-item {
+  margin: 0 15px; /* Spacing between nav items */
+}
+
+.registerBtn, .loginBtn {
+  background-color: #44803F; /* Green background for buttons */
+  color: white; /* White text for buttons */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Rounded corners for buttons */
+  padding: 10px 20px; /* Padding inside the buttons */
+}
+
+.registerBtn:hover, .loginBtn:hover {
+  background-color: #146152; /* Darker green on hover */
 }

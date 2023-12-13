@@ -32,7 +32,6 @@ export default function Checkout() {
             <br />
             <Link to="/">Go Check Product</Link>
           </div>{" "}
-          :
         </div>
       )}
 
