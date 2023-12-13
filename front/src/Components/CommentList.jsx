@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import Title from "./Title";
 import "../CSS/comment.css";
+import API from "../API/API.js";
 
 
 export default function CommentList(fruitId) {
@@ -19,25 +20,26 @@ export default function CommentList(fruitId) {
     fetchData();
   }, []);
 
-  const handleWriteComment=(e)=>{
+  const handleWriteComment=async (e) => {
     e.preventDefault();
-    fetch("/api/comments/",{
-      method:"POST",
+    const userInfo = await API.getUser();
+    fetch("/api/comments/", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: sessionStorage.getItem("username"),
-        userId: sessionStorage.getItem("userId"),
+        username: userInfo.user.email.fname,
+        userId: userInfo.user.id,
         fruitId: fruitId.fruitId,
-        text:comment.current
+        text: comment.current
       })
-    }).then((response)=>{
-      if(response.ok){
-        comment.current="";
+    }).then((response) => {
+      if (response.ok) {
+        comment.current = "";
         fetchData();
       }
-    }).catch((e)=>{
+    }).catch((e) => {
       console.log(e);
     });
   }

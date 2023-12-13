@@ -1,35 +1,44 @@
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+import API from "../API/API.js";
+import {useNavigate} from "react-router-dom";
 
 export default function SubscribeBtn({ productInfo }) {
   const [subscriptionInfo, setSubscriptionInfo] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const [isSubscribing, setIsSubscribing] = useState(false);
+  const navigate = useNavigate();
   let freq = useRef(null);
   const apiUrl = "/api/users/subscriptions";
 
   useEffect(() => {
-
-    fetch(apiUrl +"?"+
+    async function fetchData() {
+      const user = await API.getUser();
+      if(!user.user) navigate("/");
+      const userId = user.user.id;
+      fetch(apiUrl +"?"+
         new URLSearchParams({
-          userId: sessionStorage.getItem("userId"),
+          userId: userId,
           fruitId: productInfo._id,
         }))
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) setSubscriptionInfo(true);
-      }).finally(()=>setShouldRender(true));
+        .then((response) => response.json())
+        .then((data) => {
+          if (data) setSubscriptionInfo(true);
+        }).finally(()=>setShouldRender(true));
+    }
+    fetchData();
   }, [productInfo._id]);
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
+    const userId = await API.getUser();
     fetch(apiUrl, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        freq: freq.current==null?"Daily":freq.current,
-        userId: sessionStorage.getItem("userId"),
+        freq: freq.current == null ? "Daily" : freq.current,
+        userId: userId.user.id,
         fruitId: productInfo._id,
       }),
     })
@@ -54,14 +63,15 @@ export default function SubscribeBtn({ productInfo }) {
     setIsSubscribing(true);
   };
 
-  const handleUnsubscribe = () => {
+  const handleUnsubscribe = async () => {
+    const userId = await API.getUser();
     fetch(apiUrl, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userId: sessionStorage.getItem("userId"),
+        userId: userId.user.id,
         fruitId: productInfo._id,
       }),
     })

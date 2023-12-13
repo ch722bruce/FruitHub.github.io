@@ -28,7 +28,7 @@ const myStrategy = new LocalStrategy(
         if (loginResult) {
           return cb(
             null,
-            {id: userInfo._id, email: username}
+            {id: userInfo._id, email: userInfo}
           );
         } else {
           return cb(null, false);
