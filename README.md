@@ -120,7 +120,7 @@ The information displayed on this app follows Roboto font.
 <img width="1270" alt="productDetail V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/a45008af-94ac-4c6b-a81f-aad866f05080">
 
 [Subscribe Page] V2
-<img width="1270" alt="subscribe V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/0e055811-0fc1-4df1-a04a-c1f87b9ac0c">
+<img width="1270" alt="subscribe V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/0e055811-0fc1-4df1-a04a-c1f87b9ac0c2">
 
 [Comment Page] V2
 <img width="1270" alt="comment V2" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/328a146b-e2b9-4b0e-9cda-00796dda1aec">
