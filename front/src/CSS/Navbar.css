@@ -15,9 +15,6 @@
   transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-h2 {
-  color: #44803F;
-}
 
 .brand:hover, .nav-link:hover, .nav-link-carts:hover {
   color: white; /* White text on hover */
@@ -25,9 +22,20 @@ h2 {
 }
 
 .navbar-nav {
-  display: flex; /* Flexbox layout for navbar items */
-  align-items: center; /* Align items vertically */
+  align-items: center;
   height: 40px; /* Fixed height for navbar */
+}
+
+.nav-center {
+  position: absolute;
+  text-align: center;
+}
+
+
+.navbar-signout{
+  display: flex; /* Flexbox layout for navbar items */
+  height: 40px; /* Fixed height for navbar */
+  align-items: center;
 }
 
 .signout {
