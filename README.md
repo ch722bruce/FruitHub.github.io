@@ -65,6 +65,8 @@ Which will start on <http://localhost:5173>.
 
 <img width="1270" alt="color palette" src="https://github.com/ch722bruce/FruitHub.github.io/assets/122564637/a5f2828d-99b3-4f0f-a33a-719225f2e890">
 
+Really like the layout of your website and how you designed it! After I have registered a customer account by email, I cannot use the same email address to register a vendor account. It would be better if I could register two accounts with the same email address. Also, in the README it can be stated which part the colors in the palette are applied to. Anyway, great job on your FruitHub!
+
 ### Fonts
 The information displayed on this app follows Roboto font.
 1) FRUITHUB Logo: 'Roboto', sans-serif.
